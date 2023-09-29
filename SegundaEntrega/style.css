@@ -1,3 +1,5 @@
+
+/* Estilos generales para todos los dispositivos */
 :root{
     --Principal : #430E7F;
     --Principal1 : #340768;
@@ -43,14 +45,44 @@
 
 
 #fondo{
-    background: var(--Fondo);
+    background: var(--Principal-1);
 }
-#header{
-    background: #2B24A4;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    padding-top: 1px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+
+
+
+
+/* Estilos para dispositivos móviles (ancho de pantalla menor o igual a 768px) */
+@media (max-width: 768px) {
+    
+    /* Agregar estilos específicos para dispositivos móviles aquí */
+
+
+}
+
+/* Estilos para escritorio (ancho de pantalla mayor a 768px) */
+@media (min-width: 769px) {
+
+    /* Agregar estilos específicos para escritorio aquí */
+
+    #header{
+        background: var(--Principal1);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content:flex-start ;
+        align-items: center;
+    }
+    
+
+    .logo{
+        width: 5%;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .imagen{
+        width:100%;
+        height:auto;
+        object-fit: cover;
+        
+    }
 }
