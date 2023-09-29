@@ -1,5 +1,49 @@
+:root{
+    --Principal : #430E7F;
+    --Principal1 : #340768;
+    --Principal2 : #25034B;
+    --Principal3 : #1C1683;
+    --Principal-1 : #1E023D;
+    --Principal-2 : #6D3CA5;
+    --Principal-3 : #8C55CB;
+    --Acento : #B700FF;
+    --Sombra :  ;
+    --Blanco : #E0E0E0;
+}
+.fontOpen1{
+    line-height: normal;
+    font-family: Open Sans;
+    font-style: normal;
+}
+.fontOpen2{
+    line-height: normal;
+    font-family: Open Sans;
+    font-style: normal;
+}
+.fontOpen3{
+    line-height: normal;
+    font-family: Open Sans;
+    font-style: normal;
+}
+.fontRoboto1{
+    line-height: normal;
+    font-family: Roboto;
+    font-style: normal;
+}
+.fontRoboto1{
+    line-height: normal;
+    font-family: Roboto;
+    font-style: normal;
+}
+.fontRoboto1{
+    line-height: normal;
+    font-family: Roboto;
+    font-style: normal;
+}
+
+
 #fondo{
-    background: #1C1683;
+    background: var(--Fondo);
 }
 #header{
     background: #2B24A4;
