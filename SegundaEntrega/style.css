@@ -48,6 +48,55 @@
     background: var(--Principal-1);
 }
 
+button{
+    background: transparent;
+}
+
+.svg {
+    background: transparent;
+    background-color: transparent;
+    fill: none;
+}
+
+
+#header{
+    background: var(--Principal1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    height: 120px;
+    width:100%;
+}
+
+#menuUser{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 85px;
+    height: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+#desaparecer{
+    display: none;
+}
+
+#logo{
+    width: 120px;
+    height: auto;
+}
 
 
 
@@ -64,22 +113,17 @@
 
     /* Agregar estilos específicos para escritorio aquí */
 
-    #header{
-        background: var(--Principal1);
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content:flex-start ;
-        align-items: center;
-    }
-    
 
-    .logo{
-        width: 5%;
+    .botHeader{
+        width: 10%;
         height: auto;
         background-color: transparent;
+        cursor: pointer;
+        margin-left: 3%;
+        margin-right: 3%;
     }
 
-    .imagen{
+    .imagenHeader{
         width:100%;
         height:auto;
         object-fit: cover;
