@@ -43,6 +43,65 @@
     font-style: normal;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita la barra de desplazamiento horizontal al abrir el menú */
+}
+
+#menuPerfilUser {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente oculto fuera del área visible */
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: right 0.3s ease-in-out; /* Agrega una animación de transición */
+}
+
+#menuPerfilUser.cerrado {
+    right: -400px; /* Oculta el menú cuando está cerrado */
+}
+
+#menuPerfilUser.abierto {
+    right: 0; /* Muestra el menú cuando está abierto */
+}
+
+#menuPerfilUser p {
+    margin: 10px 0;
+}
+
+#menuPerfilUser img {
+    max-width: 100px; /* Ajusta el tamaño de las imágenes de perfil */
+}
+#cerrarMenuBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Espaciado inferior para separar el botón de cierre */
+}
+
+/* Estilos para el botón menuUserBtn */
+#menuUserBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#menuUserBtn img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
 
 #fondo{
     background: var(--Principal-1);

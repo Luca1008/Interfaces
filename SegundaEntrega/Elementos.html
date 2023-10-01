@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="utility.js"></script>
 </head>
 <body id="fondo">
     <header id="header">
         <div class="left">
             <button id="desaparecer" class="botHeader"><img class="imagenHeader" src="images/menuHamburguesasAbrir.svg" alt=""></button>
             <button class="botHeader"><img class="imagenHeader" src="images/menuHamburgusaCerrar.svg" alt=""></button>
-            <href id="logo">
+            <a id="logo" href="#">
                 <img class="imagenHeader" src="images/Dino.png" alt="">
-            </href>
-            
+            </a>
         </div>
         <div class="right">
             <p>NombreUsuario</p>
-            <button id="menuUser"><img class="imagenHeader" src="images/fotoperfil.svg" alt=""><img  src="images/flechaDesplegar.svg" alt=""></button>
+            <button id="menuUserBtn" class="botHeader"><img class="imagenHeader" src="images/fotoperfil.svg" alt=""><img src="images/flechaDesplegar.svg" alt=""></button>
         </div>
     </header>
     <main>
         <nav id="menuhambueguesa">
 
         </nav>
-        <nav id="menuPerfilUser">
+        <nav id="menuPerfilUser" class="cerrado">
+            <button id="cerrarMenuBtn" class="botHeader">Cerrar</button>
             <img src="images/fotoperfil.svg" alt="">
             <p>UserName</p>
             <p>gmail</p>
@@ -41,10 +42,10 @@
                 <img src="" alt="">
                 <p>Mi Perfil</p>
             </div>
-            <href>
+            <a href="#">
                 <img src="" alt="">
-                <p>Cerrar Sesion</p>     
-            </href>
+                <p>Cerrar Sesión</p>
+            </a>
         </nav>
         <div id="card">
             
@@ -54,5 +55,6 @@
     <footer id="footer">
 
     </footer>
+    
 </body>
 </html>
