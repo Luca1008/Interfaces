@@ -160,9 +160,11 @@ body {
 }
 #menuPerfilUser.cerrado {
     right: -400px; /* Oculta el menú cuando está cerrado */
+
 }
 #menuPerfilUser.abierto {
     right: 0; /* Muestra el menú cuando está abierto */
+
 }
 #menuPerfilUser p {
     margin: 10px 0;
@@ -204,7 +206,7 @@ body {
     position: sticky;
     top: 120px;
     z-index: 1;
-    left: -50px;
+    left: 0;
     background: var(--Principal1);
     flex-direction: column;
     justify-content: space-between;
@@ -213,16 +215,33 @@ body {
     display: flex;
     transition: 500ms;
 }
-#menuHamburguesa:hover {
-    left: 10px;
+#menuHamburguesa:hover .categoria{
+    width: 200px;
+}
+#menuHamburguesa:hover .categoria p{
+    width: 200px;
+    opacity: 1;
+}
+.categoria p{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    opacity: 0;
+    transition: 500ms;
 }
 .categoria{
+    transition: width 500ms ease;
+    width: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: fit-content;
-    height: auto;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.categoria img{
+    position: absolute;
+    right: 0;
 }
 #menuHamburguesa.cerrado {
     left: -150px;
