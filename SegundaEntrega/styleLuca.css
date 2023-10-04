@@ -1,3 +1,4 @@
+/* General */
 /* Estilos generales para todos los dispositivos */
 :root{
     --Principal : #430E7F;
@@ -41,13 +42,108 @@
     font-family: Roboto;
     font-style: normal;
 }
-
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Evita la barra de desplazamiento horizontal al abrir el menú */
+    overflow-x: hidden; 
 }
+#fondo{
+    background: var(--Principal-1);
+}
+.svg {
+    background: transparent;
+    background-color: transparent;
+    fill: none;
+}
+.png{
+    background: transparent;
+    background-color: transparent;
+    fill: none;
+}
+#desaparecer{
+    display: none;
+}
+/* Fin General */
 
+
+
+/* Header */
+#header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--Principal1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    height: 120px;
+    width:100%;
+}
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    width: 100%;
+    height: 100%;
+    
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+#menuUser{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 85px;
+    height: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+
+}
+#logo{
+    max-width: 145px;
+    height: auto;
+    padding:10px;
+}
+.menu-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.user-mario {
+    width: 80%;
+    height: 40%;
+    display: flex;
+    align-items: left;
+    justify-content:space-evenly;
+    flex-direction: column;
+    
+}
+.botHeader{
+    width: 8%;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.imagenHeader{
+    width:100%;
+    height:auto;
+    object-fit: cover;
+    
+}
+/* Fin Header */
+
+
+
+
+/* Menu Usuario */
 #menuPerfilUser {
     position: fixed;
     top: 0;
@@ -62,19 +158,15 @@ body {
     padding: 20px;
     transition: right 0.3s ease-in-out; /* Agrega una animación de transición */
 }
-
 #menuPerfilUser.cerrado {
     right: -400px; /* Oculta el menú cuando está cerrado */
 }
-
 #menuPerfilUser.abierto {
     right: 0; /* Muestra el menú cuando está abierto */
 }
-
 #menuPerfilUser p {
     margin: 10px 0;
 }
-
 #menuPerfilUser img {
     max-width: 100px; /* Ajusta el tamaño de las imágenes de perfil */
 }
@@ -87,8 +179,6 @@ body {
     cursor: pointer;
     margin-bottom: 20px; /* Espaciado inferior para separar el botón de cierre */
 }
-
-/* Estilos para el botón menuUserBtn */
 #menuUserBtn {
     width: 120px;
     height: auto;
@@ -99,89 +189,55 @@ body {
     border: none;
     cursor: pointer;
 }
-
 #menuUserBtn img {
     width: 80%;
     height: auto;
     margin-right: 10px;
 }
+/* fin menu usuario*/
 
 
-#fondo{
-    background: var(--Principal-1);
-}
-
-button{
-    background: transparent;
-}
-
-.svg {
-    background: transparent;
-    background-color: transparent;
-    fill: none;
-}
 
 
-#header{
+/* Menu Hamburguesa */
+#menuHamburguesa {
+    position: sticky;
+    top: 120px;
+    z-index: 1;
+    left: -50px;
     background: var(--Principal1);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    height: 120px;
-    width:100%;
-}
-
-#menuUser{
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    width: 85px;
-    height: auto;
-    margin-left: 3%;
-    margin-right: 3%;
-
-}
-.right {
+    height: calc(100vh - 120px);
+    width: fit-content;
     display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Alinea los elementos a la derecha */
-    width: 100%;
-    height: 100%;
-    
+    transition: 500ms;
 }
-.left {
+#menuHamburguesa:hover {
+    left: 10px;
+}
+.categoria{
     display: flex;
-    align-items: center;
-}
-#desaparecer{
-    display: none;
-}
-
-#logo{
-    max-width: 145px;
-    height: auto;
-    padding:10px;
-}
-
-.menu-icon{
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    width: fit-content;
+    height: auto;
 }
+#menuHamburguesa.cerrado {
+    left: -150px;
+}
+#menuHamburguesa.abierto {
+    left: 0px;
+}
+/* Fin Menu Hamburguesa *0/
 
-.user-mario {
-    width: 80%;
-    height: 40%;
-    display: flex;
-    align-items: left;
-    justify-content:space-evenly;
-    flex-direction: column;
-    
-}
+
+
+
+
+
+
 
 
 
@@ -199,20 +255,6 @@ button{
     /* Agregar estilos específicos para escritorio aquí */
 
 
-    .botHeader{
-        width: 8%;
-        height: auto;
-        background-color: transparent;
-        border: none;
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-
-    .imagenHeader{
-        width:100%;
-        height:auto;
-        object-fit: cover;
-        
-    }
+    
 
 }
