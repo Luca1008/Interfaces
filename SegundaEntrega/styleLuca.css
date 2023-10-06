@@ -59,6 +59,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+#content{
+}
 .svg {
     background: transparent;
     background-color: transparent;
@@ -260,7 +262,6 @@ body {
     left: -200px;
 
 }
-
 #menuHamburguesa:hover .categoria{
     width: 200px;
 }
@@ -299,11 +300,13 @@ body {
 #menuHamburguesa.abierto {
     left: 0px;
 }
-/* Fin Menu Hamburguesa *0/
+/* Fin Menu Hamburguesa */
 
 
+/* Formulario */
 
 
+/* Fin de Formulario */
 
 
 
