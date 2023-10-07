@@ -109,7 +109,7 @@ body {
     position: sticky;
     top: 0;
     left: 0;
-    background: var(--Principal1);
+    background: var(--Principal);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: grid;
     grid-template-columns: auto auto;
@@ -139,19 +139,32 @@ body {
     height: auto;
     margin-left: 3%;
     margin-right: 3%;
+   
 
 }
 #logo{
     max-width: 145px;
     height: auto;
     padding:10px;
+    cursor: pointer;
 }
 .menu-icon{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    cursor:pointer;
+    text-decoration: none;
+    color: #d6d8db;
+    font-family: 'Open Sans', sans-serif;
+    margin:8px;
+    font-weight: normal;
+}
+
+.userName {
+   font-weight:bold;
+   font-size: larger; 
 }
 .user-mario {
     width: 80%;
@@ -170,6 +183,7 @@ body {
     margin-left: 3%;
     margin-right: 3%;
     transition: transform 0.3s ease-in-out;
+    cursor:pointer;
 }
 .botHeader:hover{
     transform: scale(1.1);
@@ -196,8 +210,8 @@ body {
     right: -300px; /* Inicialmente oculto fuera del área visible */
     width: 300px;
     height: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color:#430E7F;
+    color: #eaeaea;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,14 +235,15 @@ body {
 #cerrarMenuBtn {
     align-self: end;
     background: none;
-    margin-right: 70px;
-    margin-top: 30px;
-    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 50px;
     cursor: pointer;
+    border:none;
     margin-bottom: 20px; /* Espaciado inferior para separar el botón de cierre */
 }
 #menuUserBtn {
-    width: 120px;
+    width: 100px;
     height: auto;
     display: flex;
     align-items: center;
@@ -242,8 +257,9 @@ body {
     height: auto;
     margin-right: 10px;
 }
-/* fin menu usuario*/
 
+
+/* fin menu usuario*/
 
 
 
@@ -253,7 +269,7 @@ body {
     top: 101px;
     z-index: 1;
     left: 0;
-    background: var(--Principal1);
+    background:  #581A9F;;
     flex-direction: column;
     justify-content: space-between;
     height: calc(100vh - 104px);
@@ -261,6 +277,7 @@ body {
     display: flex;
     transition: 500ms;
     box-shadow: 4px 4px 4px 0px rgba(0.25, 0.25, 0.25, 0.25), 4px 4px 4px 0px rgba(0.25, 0.25, 0.25, 0.25);
+    cursor: pointer;
     
 }
 #menuHamburguesa.mostrado {
@@ -281,6 +298,10 @@ body {
     width: 0;
     opacity: 0;
     transition: 500ms;
+    color: #d6d8db;
+    font-family: 'Open Sans', sans-serif;
+    margin:8px;
+    font-weight: bold;
 }
 .categoria{
     transition: width 500ms ease;
@@ -291,6 +312,7 @@ body {
     justify-content: space-between;
     height: 60px;
     border: 2px solid var(--Principal2);
+    
 }
 .categoria img{
     height: 40px;
