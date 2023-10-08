@@ -484,11 +484,12 @@ body {
     bottom:0px
 }
 #footer div {
-    background-color: var(--Principal);
     margin: -5px 0px 0px 0px;
     padding:0px;
     color: #fff;
     text-align:center;
+    justify-content: space-between;
+    height: fit-content;
 }
 #svg {
     width:100%;
@@ -563,10 +564,38 @@ body {
 @keyframes wave {
     to {transform: translateX(-100%);}
 }
+#contFooter{
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+    position: block;
+    bottom:0px
+}
+#textFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+#contFooter p, #contFooter a , #logoFooter img{
+    font-family:'Roboto', sans-serif ;
+    font-size: small;
+    color:#8492a1;
+    text-decoration:none;
+    margin-bottom: 5%;
+}
+#logoFooter{
+    margin-right: auto;
+    width: 50%;
+}
 /* Fin Footer */
 
-/* Card */
 
+
+
+/* Card */
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 170px;
