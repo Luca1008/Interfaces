@@ -35,6 +35,7 @@ body {
     padding: 0;
     overflow-x: hidden; 
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 h1, h2, h3 {
     font-family:'Open Sans', sans-serif;
@@ -47,8 +48,11 @@ h1, h2, h3 {
     background-size: cover;
 }
 #fondo{
-    background-image: linear-gradient(to top, var(--Principal-2)  20%, var(--Principal)  100%);
-    
+    background-image: linear-gradient(to top, var(--Principal2) 20%, var(--Principal) 100%), url(../images/flowers-petals.gif);
+    background-size: cover; /* Ajusta el tamaño del GIF para cubrir el fondo */
+    background-repeat: no-repeat; /* Evita la repetición del fondo */
+    background-blend-mode: multiply; /* Mezcla el color de fondo y el GIF */
+
 }
 #fondo2{
     background-color: var(--Principal2);
@@ -100,7 +104,22 @@ h1, h2, h3 {
     padding: 0;
     box-sizing: border-box;
 }
+/* Clase para la animación de desplazamiento hacia la izquierda */
+.animate-left {
+    animation: wobble-horizontal-top2 1s ease; /* Ajusta la duración y la función de tiempo según tus preferencias */
+    /* Otras propiedades de estilo que desees aplicar durante la animación */
+  }
+  
+  /* Clase para la animación de desplazamiento hacia la derecha */
+  .animate-right {
+    animation: wobble-horizontal-top 1s ease; /* Ajusta la duración y la función de tiempo según tus preferencias */
+    /* Otras propiedades de estilo que desees aplicar durante la animación */
+  }
+@keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
+@keyframes wobble-horizontal-top2{100%,0%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
 @keyframes bounce-left{0%{transform:translateX(-48px);animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{transform:translateX(-26px);animation-timing-function:ease-in}65%{transform:translateX(-13px);animation-timing-function:ease-in}82%{transform:translateX(-6.5px);animation-timing-function:ease-in}93%{transform:translateX(-4px);animation-timing-function:ease-in}25%,55%,75%,87%,98%{transform:translateX(0);animation-timing-function:ease-out}100%{transform:translateX(0);animation-timing-function:ease-out;opacity:1}}
+@keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+
 /* Fin General */
 
 
@@ -126,11 +145,17 @@ h1, h2, h3 {
     justify-content: flex-end; /* Alinea los elementos a la derecha */
     width: 100%;
     height: 100%;
+    padding: 0% 10%;
     
 }
 .left {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content:flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 0% 10%;
 }
 #menuUser{
     display: flex;
@@ -147,19 +172,16 @@ h1, h2, h3 {
 #logo{
     max-width: 145px;
     height: auto;
-    padding:10px;
+    padding:10px 10px;
     cursor: pointer;
 }
 .menu-icon{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4%;
-    margin-bottom: 4%;
     cursor:pointer;
     text-decoration: none;
     color: #d6d8db;
-    margin:8px;
     font-weight: normal;
 }
 
@@ -177,12 +199,9 @@ h1, h2, h3 {
     
 }
 .botHeader{
-    width: 8%;
     height: auto;
     background-color: transparent;
     border: none;
-    margin-left: 3%;
-    margin-right: 3%;
     transition: transform 0.3s ease-in-out;
     cursor:pointer;
 }
@@ -194,10 +213,17 @@ h1, h2, h3 {
 
 }
 .imagenHeader{
-    width:100%;
+    width: 100%;
     height:auto;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+}
+#toggleMenu{
+    height:auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    width: 50px;
+    height: max-content;
 }
 /* Fin Header */
 
@@ -278,13 +304,13 @@ h1, h2, h3 {
     padding: 20px 0;
     gap: 20px;
     position: fixed;
-    top: 101px;
+    top: 100px;
     z-index: 99;
     left: 0;
     background:  var(--Principal1);
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 102px);
+    height: calc(100vh - 100px);
     width: fit-content;
     display: flex;
     transition: 500ms;
@@ -386,7 +412,7 @@ h1, h2, h3 {
     font-size: 1.7rem;
     padding: 1rem 0;
 }
-.message button {
+.message button[type="submit"] {
     padding: 1rem;
     font-weight: 400;
     background-color: var(--Principal-2);
@@ -396,11 +422,12 @@ h1, h2, h3 {
     cursor: pointer;
     font-size: .9rem;
     margin-top: 2rem;
-    transition: all .3s ease-in;
+    transition: all .9s ease-in;
     color: var(--Principal1);
 }
-.message button:hover {
+.message button[type="submit"]:hover {
     background-color: var(--Principal);
+    animation: rotate-vertical-center .9s linear both 1;
 }
 .formulario {
     border-radius: 30px;
@@ -426,6 +453,15 @@ h1, h2, h3 {
     justify-content: space-around;
     margin: auto;
 }
+.bx{
+    justify-content: center;
+    align-content: center;
+}
+.bx img{
+    margin-top: 5px;
+    width: 35px;
+    height: auto;
+}
 .border-icon {
     height: 20px;
     width: 20px;
@@ -439,6 +475,8 @@ h1, h2, h3 {
     transition: all .3s ease-in;
 }
 .border-icon:hover {
+    animation: rotate-vertical-center .9s linear both 1;
+    animation-iteration-count: 1; /* Reproducir la animación solo una vez */
     background-color: var(--Acento);
     cursor: pointer;
 }
@@ -457,28 +495,28 @@ h1, h2, h3 {
     font-size: .9rem;
     color: var(--Acento);
 }
-.formulario input[type="button"] {
+.formulario button {
     width: 60%;
     margin: auto;
     border: solid thin var(--Principal);
-    padding: .7rem;
+    padding: 10px 10px;
+    justify-content: center;
+    align-content: center;
     border-radius: 2rem;
     background-color: var(--Principal);
     font-weight: 600;
-    margin-top: 3rem;
+    margin-top: 30px;
     font-size: .8rem;
     cursor: pointer;
     color: #222;
-    transition: 0.7s ease;
+    transition: all .3s ease-in;
 
 }
-.formulario input[type="button"]:hover{
+.formulario button:hover{
+    animation: rotate-vertical-center .9s linear both 1;
     background-color: var(--Principal-1) ;
     border: var(--Principal2);
     
-}
-.formulario button{
-    color: var(--Sombra);
 }
 .sign-up{
     position: absolute;
@@ -497,13 +535,240 @@ h1, h2, h3 {
     opacity: 0;
     visibility: hidden;
 }
+.captcha {
+    display: flex;
+    width: 55%;
+    height: 60px;
+    margin: 10px auto;
+    grid-area: 4 / 1 / 5 / 7;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #FAFAFA;
+}
+
+.captcha input {
+    width: 10%;
+    height: 30px;
+    margin: auto;
+}
+
+.captcha p {
+    color: #000;
+    font-size: 14px;
+    margin: auto;
+}
+
+.captcha img {
+    display: flex;
+    justify-content: flex-end;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.successAnimation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    opacity: 0;
+}
+.successAnimationAppear{
+    animation: appear 4s;
+}
+
+.successAnimation h2{
+    color: #4fd614;
+    margin: 5px 0;
+}
+.checkmark {
+    width: 5%;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #4fd614;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #4fd614;
+    position: relative;
+    margin: 0 auto;
+}
+
+.checkmarkAnimation {
+    animation: fill .6s ease-in-out .6s forwards, scale .5s ease-in-out 1.3s both, disappear 1.9s ease 2.4s forwards;
+}
+
+.checkmarkCircle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4fd614;
+}
+
+.checkmarkCircleAnimation {
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmarkCheck {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+}
+
+.checkmarkCheckAnimation {
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 5px #4fd614;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes appear {
+    0%,100% {
+        opacity: 0;
+    }
+
+    25%,75% {
+        opacity: 1;
+        z-index: 999;
+    }
+}
 /* Fin de Formulario */
+
+
+/* Load */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Sombra);
+    opacity: .9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-progress {
+    text-align: center;
+}
+
+.loading-bar {
+    width: 0;
+    height: 20px;
+    background-color: #0074D9;
+    margin-top: 10px;
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.dino {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    bottom: 5px;
+    left: 42px;
+    z-index: 2;
+    background: url(https://raw.githubusercontent.com/GemukiDev/dinosaurio_chrome/master/img/dino.png) repeat-x 0px 0px;
+    background-size: 336px 84px;
+    background-position-x: 0px;
+
+}
+
+
+.loader {
+    border: 16px solid #fff4f0;
+    border-radius: 50%;
+    border-bottom: 16px solid #6e34db;
+    width: 190px;
+    height: 190px;
+    animation: spin 3s linear infinite;
+  }
+  
+  /* Safari */
+ 
+  @keyframes spin {
+    0% { transform: rotate(360deg); }
+    100% {transform: rotate(0deg);  }
+  }
+
+
+
+
+.dino-corriendo {
+    animation: animarDino 0.25s steps(2) infinite;
+}
+@keyframes animarDino{
+    from{
+        background-position-x: -84px;
+    }
+    to{
+        background-position-x: -252px;
+    }
+}
+
+.contenedor p {
+    font-weight:bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+     margin: 10px;
+     color:#fff;
+}
+.contenedor{
+  flex-direction: column;
+    margin:20px;
+    display: flex;
+    align-items: center;
+}
+/* Fin Load */
 
 
 /* Footer */
 #footer {
     width:100%;
-    position:flex;
     bottom:0px;
     
 }
@@ -593,7 +858,6 @@ h1, h2, h3 {
     height: fit-content;
     bottom:0px;
     padding: 0% 10%;
-    
 }
 #textFooter{
     background-color: var(--Principal1);
@@ -688,25 +952,28 @@ color:#fff;
     padding: 20px;
     border-radius:20px;
     background-color: #581A9F;
-    width: 100%;
+    width: 170px;
+    height: 350px;
     transition: 500ms;
-    /* animation:bounce-left 1.2s linear both */
+
   }
   .card h3 {
     color:white;
     margin:0;
-    padding:10px;
+    
   }
   .price {
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     margin-left:5px;
   }
  
   .card button {
     border: none;
     outline: 0;
-    padding: 5px;
+   margin-bottom:10px;
+   margin-top:5px;
+   padding:5px;
     color: var(--Sombra);
     background-color: #e2e2e2;
     text-align: center;
@@ -722,14 +989,27 @@ color:#fff;
   .imagen {
   border-radius:10%;
   width:100%;
+  height:65%;
+
   }
-  
+
+  .button-game {
+    margin-top:30px;
+  }
+
   .price-icon {
   display:flex;
   flex-direction: row;
   align-self: center;
-  margin:15px;
-  padding:2px;
+  margin:5px;
+  }
+
+  .game-info {
+    margin-top:5px;
+  }
+  .cardBig{
+    display: flex;
+    width: 80%;
   }
 /* Fin de Card */
 
@@ -741,7 +1021,6 @@ color:#fff;
   position: relative;
   
 }
-@keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -776,7 +1055,7 @@ color:#fff;
     align-items: center;
     align-content: center;
     justify-content: center;
-  background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text */
@@ -828,6 +1107,76 @@ margin:5px;
   from {opacity: .4} 
   to {opacity: 1}
 }
+.bigCard {
+    box-sizing: border-box;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.bigCardShadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 10%, transparent 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.5s;
+}
+
+
+.cardImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardImage img{
+    width: 100%;
+    height: 30%;
+    aspect-ratio: 16 / 9;
+}
+
+.playIcon {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    padding-bottom: 5%;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.playIcon img {
+    width: 100%;
+    display: block;
+}
+
+.bigCardInfo h3{
+    opacity: 0.9;
+}
+
+.bigCardInfo h3,
+.bigCardInfo h2 {
+    margin: 5px;
+}
+
+.bigCardInfo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    transition: 300ms;
+}
 /* Fin Card */
 
 
@@ -840,9 +1189,39 @@ margin:5px;
     align-items: center;
     align-content: center;
 }
+#contJuego{
+    border-radius: 10%;
+}
 #menuJuego{
     background-color: #222;
     width: 100%;
+    padding: 20px 20px;
+    display: flex;
+}
+#menuIzquierda{
+    width: 50%;
+    left: 0%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+#menuIzquierda img{
+    width: 10%;
+    height: auto;
+    margin-left: 5px;
+}
+#menuDerecha{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+#menuDerecha img{
+    width: 10%;
+    height: auto;
+    margin-right: 5px;
+    background-color: var(--Blanco);
+    border-radius: 10%;
+    border-color: var(--Sombra);
 }
 #reglasJuego{
     margin-top: 5%;
@@ -876,7 +1255,6 @@ margin:5px;
     margin-top: 20px;
     margin-bottom: 20px
 }
-
 ::selection{
     color: #fff;
     background: #007bff;
@@ -1043,8 +1421,10 @@ margin:5px;
     max-width: fit-content;
     transition: 500ms ease;
     gap: 10px;
+    transition: 500ms ease;
+    animation: bounce-left 1.2s linear both; 
 }
-.carouselChicoControls button {
+.carouselChicoControls button, .carouselControlsContainer button {
     aspect-ratio: 1 / 1;
     position: absolute;
     transform: translate(0, -50%);
@@ -1058,7 +1438,7 @@ margin:5px;
     align-items: center;
     border-radius: 10px;
     background-color: var(--Blanco);
-    width: 10px;
+    width: 60px;
     border: none;
     z-index: 3;
 }
@@ -1077,7 +1457,77 @@ margin:5px;
     left: 0%;
     background-image: url(../images/arrowcarrizz.svg);
 }
+.carouselControlPrevious {
+    left: 2%;
+    background-image: url(../images/arrowcarrizz.svg);
+}
+.carouselControlNext{
+    right: 2%;
+    background-image: url(../images/arrowCarr.svg);
+}
 
+.carousel {
+    width: 100%;
+    margin: 0 auto 30px auto;
+
+}
+
+.carousel a{
+    cursor: default;
+}
+
+.carouselContainer {
+    overflow: hidden;
+    aspect-ratio: 15 / 6;
+    align-items: center;
+    display: flex;
+    max-width: 100%;
+    position: relative;
+    perspective: 100vmax;
+}
+
+.carouselItem {
+    opacity: 0;
+    position: absolute;
+    transition: all 500ms ease-in-out;
+    z-index: 0;
+    border-radius: 30px;
+    background-size: contain;
+}
+
+.carouselItem1,
+.carouselItem3 {
+    opacity: 0.8;
+    width: 60%;
+    z-index: 1;
+}
+
+.carouselItem1 {
+    left: 20%;
+    transform: translatex(-50%) rotateY(-30deg);
+}
+.carouselItem3 {
+    left: 80%;
+    transform: translateX(-50%) rotateY(30deg);
+}
+
+.carouselItem2 {
+    box-shadow: -2px 5px 33px 6px #000000ab;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    z-index: 2;
+}
+
+.carouselItem2:hover .bigCardShadow{
+    height: 100%;
+}
+.carouselItem2:hover .playIcon{
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 1;
+}
 /* Fin Carrucel */
 
 /* On smaller screens, decrease text size */
@@ -1088,7 +1538,35 @@ margin:5px;
 /* Estilos para dispositivos móviles (ancho de pantalla menor o igual a 768px) */
 @media (max-width: 768px) {
     
-    /* Agregar estilos específicos para dispositivos móviles aquí */
+    #contFooter{
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0% 0%;
+        width: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+    #botFooter{
+        width: 100%;
+    }
+    #textFooter{
+        width: 100%;
+    }
+    #logoFooter img{
+        width: 50%;
+    }
+    #menuHamburguesa{
+        overflow-y: auto;
+        height: calc(100vh - 100px);
+    }
+    #menuHamburguesa .categoria{
+        width: 200px;
+    }
+    #menuHamburguesa .categoria p{
+        width: 200px;
+        opacity: 1;
+    }
+    
 
 
 }
@@ -1102,13 +1580,3 @@ margin:5px;
     
 
 }
-
-
-
-
-
-
-
-
-
-
