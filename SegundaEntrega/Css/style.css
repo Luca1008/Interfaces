@@ -1211,14 +1211,20 @@ margin:5px;
 }
 #contJuego{
     border-radius: 1%;
-    background-color: var(--Principal-2);
-    margin-top:30px;
+    background-color: var(--Principal);
+    margin-top:10px;
+    border: 1px solid var(--Sombra);
+}
+img.vs {
+    border-radius:3%;
+    margin: 10px;
 }
 #menuJuego{
-    background-color: var(--Sombra);
+    background-color: var(--Principal3);
     width: 100%;
     padding: 20px 20px;
     display: flex;
+    margin-top:10%;
 }
 #menuIzquierda{
     width: 50%;
@@ -1243,18 +1249,59 @@ margin:5px;
     margin-right: 5px;
     background-color: var(--Blanco);
     border-radius: 10%;
-    border-color: var(--Sombra);
+    border-color: 3px var(--Sombra);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
 #reglasJuego{
     margin-top: 5%;
     width: 100%;
+    background-color: #00000015;
+    padding:20px;
 }
 #bread{
-    justify-content: flex-start;
-    margin-left: 10%;
+    margin-left: 20%;
     margin-top: 40px;
+   color:#fff;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 22px;
+   cursor:pointer;
+}
+
+#bread a {
+    text-decoration: none;
+    color:#fff;
 
 }
+#reglasJuego h1 {
+    font-size:40px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--Acento);
+    margin-top:20px;
+    border-color: #fff;
+}
+.button-fav {
+    padding: 15px 25px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #cb405265;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #54338d;
+    margin:20px;
+    margin-left:0px;
+  }
+  
+  .button-fav:hover {background-color: #b92193;
+color:#000000d1;}
+  
+  .button-fav:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 .contant{
     display: flex;
     flex-direction: column;
@@ -1264,7 +1311,11 @@ margin:5px;
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    color:#fff;
+    font-family: 'Open Sans', sans-serif;
+    
+    
 }
 .contant article{
     display: flex;
@@ -1278,6 +1329,38 @@ margin:5px;
     margin-top: 20px;
     margin-bottom: 20px
 }
+
+.respuestas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:10px;
+}
+#comentarios textarea {
+    margin:5px;
+}
+#comentarios button {
+    width: 80px;
+    align-self: flex-end;
+    margin: 5px;
+    border-radius: 5%;
+}
+.text-area-button{
+    display: flex;
+    flex-direction: column;
+}
+
+.respuestas h3 {
+    
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.respuestas p {font-size: 15px;
+margin:0px;
+}
+
 ::selection{
     color: #fff;
     background: #007bff;
