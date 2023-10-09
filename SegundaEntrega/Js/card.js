@@ -18,4 +18,5 @@ btnBuyList.forEach(btnBuy => {
         <p><button>Finalizar compra</button></p>
     `;
     });
+    
 });

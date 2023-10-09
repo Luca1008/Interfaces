@@ -54,3 +54,18 @@ Finalmente agregaremos todo el comportamiento necesario con código Javascript.
 
 
 Siguiendo este orden y forma de abordar la solución van a lograr un sitio más robusto, modificable y legible, van a trabajar más ordenados y más rápido.
+
+
+<!-- <div class="loading-container">
+        <div class="contenedor">
+            <div class="loader">
+                <div class="dino dino-corriendo"></div>
+            </div>
+            <p> Loading . . . </p>
+        </div>
+        <div class="loading-progress">
+            <div class="loading-bar"></div>
+            <div class="loading-text">Cargando...</div>
+        </div>
+    </div> -->
+    <!-- <script src="../Js/carga.js"></script> -->
