@@ -358,7 +358,7 @@ h1, h2, h3 {
     
 }
 .container-form {
-    background-image: url(/images/dinosaurMAario.png);
+    background-image: url(../images/dinosaurMAario.png);
     border-radius: 30px;
     background-color: #00000098;
     background-repeat: no-repeat, repeat;
@@ -1069,13 +1069,13 @@ margin:5px;
 .carouselChicoControls .carouselChicoButtonRight{
     transform: translate(70%, -50%);
     right: 0%;
-    background-image: url(/images/arrowCarr.svg);
+    background-image: url(../images/arrowCarr.svg);
 }
 
 .carouselChicoControls .carouselChicoButtonLeft{
     transform: translate(-70%, -50%);
     left: 0%;
-    background-image: url(/images/arrowcarrizz.svg);
+    background-image: url(../images/arrowcarrizz.svg);
 }
 
 /* Fin Carrucel */
