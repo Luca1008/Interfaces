@@ -10,7 +10,6 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,400;1,600;1,700&family=Roboto:ital,wght@0,300;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
@@ -49,72 +48,92 @@
                 <box-icon name='log-out' flip='vertical' color='#939ab0'></box-icon>
                 <p>Cerrar sesión</p>
             </a>
+            
         </nav>
         <!-- Fin Menu Usuario -->
-
-
-        <article class="contant">
-            <p id="bread"><span><a href="index.html">INICIO</a></span>>> ESTRATEGIAS >> 4 EN LINEA</p>
-            <figure id="juego">
-                <img src="images/4enraya2.png" alt="">
-                <img src="images/4enraya1.png" alt="">
-                <div id="menuJuego" class="div3">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+        <div id="bread">
+            <p><span><a href="index.html">INICIO</a></span>>> ESTRATEGIAS >> 4 EN LINEA</p>
+        </div>
+        <div class="contant">
+            <article>
+                <figure id="juego">
+                    <img src="images/4enraya2.png" alt="">
+                    <img src="images/4enraya1.png" alt="">
+                    <div id="menuJuego" class="div3">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </figure>
+            </article>
+            <section id="reglasJuego">
+                <h1>4 en raya Pac-Man vs Blinky</h1>
+                <h2>Objetivo del Juego</h2>
+                <p>Los jugadores compiten por ser el primero en formar una línea continua de cuatro discos. La línea
+                    puede
+                    ser horizontal, vertical o diagonal. ¡Derrota a tu oponente para ganar la partida! </p>
+                <h2>¿Cómo se juega?</h2>
+                <p>
+                    Los jugadores compiten por ser el primero en formar una línea continua de cuatro discos. La línea
+                    puede
+                    ser horizontal, vertical o diagonal. ¡Derrota a tu oponente para ganar la partida! </p>
+                <h2>Instrucciones</h2>
+                <p>Elige quien quieres ser si Pac-Man o Blinky. En la parte superior del tablero encontrarás una ficha
+                    para
+                    cada columna, pulsa en la que quieras deslizar. Se puede utilizar tanto el mouse como el teclado.
+                </p>
+                <img src="images/controles1.png" alt="">
+                <img src="images/controles2.png" alt="">
+                <h2>Dentro del juego</h2>
+                <div class="wrapper">
+                    <div class="gallery">
+                        <div class="image"><span><img src="images/ingame1.png" alt=""></span></div>
+                        <div class="image"><span><img src="images/ingame2.png" alt=""></span></div>
+                        <div class="image"><span><img src="images/ingameVideo.png" alt=""></span></div>
+                    </div>
                 </div>
-            </figure>
-        </article>
-        <section id="reglasJuego" class="imgBody">
-            <h1>4 en raya Pac-Man vs Blinky</h1>
-            <h2>Objetivo del Juego</h2>
-            <p>Los jugadores compiten por ser el primero en formar una línea continua de cuatro discos. La línea puede
-                ser horizontal, vertical o diagonal. ¡Derrota a tu oponente para ganar la partida! </p>
-            <h2>¿Cómo se juega?</h2>
-            <p>
-                Los jugadores compiten por ser el primero en formar una línea continua de cuatro discos. La línea puede
-                ser horizontal, vertical o diagonal. ¡Derrota a tu oponente para ganar la partida! </p>
-            <h2>Instrucciones</h2>
-            <p>Elige quien quieres ser si Pac-Man o Blinky. En la parte superior del tablero encontrarás una ficha para
-                cada columna, pulsa en la que quieras deslizar. Se puede utilizar tanto el mouse como el teclado.</p>
-            <img src="images/controles1.png" alt="">
-            <img src="images/controles2.png" alt="">
-            <h2>Dentro del juego</h2>
-            <div class="wrapper">
-                <div class="gallery">
-                    <div class="image"><span><img src="images/ingame1.png" alt=""></span></div>
-                    <div class="image"><span><img src="images/ingame2.png" alt=""></span></div>
-                    <div class="image"><span><img src="images/ingameVideo.png" alt=""></span></div>
+                <div class="preview-box">
+                    <div class="details">
+                        <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
+                        <span class="icon fas fa-times"></span>
+                    </div>
+                    <div class="image-box">
+                        <div class="slide prev"><i class="fas fa-angle-left"></i></div>
+                        <div class="slide next"><i class="fas fa-angle-right"></i></div>
+                        <img src="" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="preview-box">
-                <div class="details">
-                    <span class="title">Image <p class="current-img"></p> of <p class="total-img"></p></span>
-                    <span class="icon fas fa-times"></span>
-                </div>
-                <div class="image-box">
-                    <div class="slide prev"><i class="fas fa-angle-left"></i></div>
-                    <div class="slide next"><i class="fas fa-angle-right"></i></div>
+                <div class="shadow"></div>
+                <h3>Comentarios</h3>
+                <div id="comentarios">
+                    <input type="text">
                     <img src="" alt="">
+                    <div id="comentario">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div id="comentario">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div id="comentario">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
+                    <div id="comentario">
+                        <img src="" alt="">
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-            <div class="shadow"></div>            
-            </div>
-            <h3>Comentarios</h3>
-            <input type="text">
-            <img src="" alt="">
-            <div id="comentario">
-                <img src="" alt="">
-                <p></p>
-            </div>
-        </section>
+            </section> 
+        </div>
     </main>
     <footer></footer>
-    <script  src="galery.js"></script>
+    <script src="galery.js"></script>
     <script src="userMenu.js"></script>
-    
+
 
 </body>
 
