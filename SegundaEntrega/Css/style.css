@@ -1,3 +1,7 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* General */
 /* Estilos generales para todos los dispositivos */
 :root{
@@ -12,35 +16,17 @@
     --Sombra :  #222;
     --Blanco : #E0E0E0;
 }
-.fontOpen1{
-    line-height: normal;
-    font-family: Open Sans;
-    font-style: normal;
+::-webkit-scrollbar {
+    width: 7px;
 }
-.fontOpen2{
-    line-height: normal;
-    font-family: Open Sans;
-    font-style: normal;
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
 }
-.fontOpen3{
-    line-height: normal;
-    font-family: Open Sans;
-    font-style: normal;
-}
-.fontRoboto1{
-    line-height: normal;
-    font-family: Roboto;
-    font-style: normal;
-}
-.fontRoboto1{
-    line-height: normal;
-    font-family: Roboto;
-    font-style: normal;
-}
-.fontRoboto1{
-    line-height: normal;
-    font-family: Roboto;
-    font-style: normal;
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff4e;
+    border-radius: 5px;
 }
 body {
     display: flex;
@@ -48,6 +34,11 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
+    font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3 {
+    font-family:'Open Sans', sans-serif;
+    
 }
 #fondo1{
     background-color: var(--Principal2);
@@ -69,6 +60,7 @@ body {
     justify-content: center;
     align-items: center;
     align-content: center;
+    transition: padding 500ms ease;
 }
 .svg {
     background: transparent;
@@ -107,7 +99,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 @keyframes bounce-left{0%{transform:translateX(-48px);animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{transform:translateX(-26px);animation-timing-function:ease-in}65%{transform:translateX(-13px);animation-timing-function:ease-in}82%{transform:translateX(-6.5px);animation-timing-function:ease-in}93%{transform:translateX(-4px);animation-timing-function:ease-in}25%,55%,75%,87%,98%{transform:translateX(0);animation-timing-function:ease-out}100%{transform:translateX(0);animation-timing-function:ease-out;opacity:1}}
 /* Fin General */
@@ -168,7 +159,6 @@ body {
     cursor:pointer;
     text-decoration: none;
     color: #d6d8db;
-    font-family: 'Open Sans', sans-serif;
     margin:8px;
     font-weight: normal;
 }
@@ -285,6 +275,8 @@ body {
 
 /* Menu Hamburguesa */
 #menuHamburguesa {
+    padding: 20px 0;
+    gap: 20px;
     position: fixed;
     top: 101px;
     z-index: 99;
@@ -298,11 +290,17 @@ body {
     transition: 500ms;
     box-shadow: 4px 4px 4px 0px rgba(0.25, 0.25, 0.25, 0.25), 4px 4px 4px 0px rgba(0.25, 0.25, 0.25, 0.25);
     cursor: pointer;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 #menuHamburguesa.mostrado {
     position: fixed;
     left: -200px;
 
+}
+#menuHamburguesa:hover{
+    overflow-y: auto;
 }
 #menuHamburguesa:hover .categoria{
     width: 200px;
@@ -318,7 +316,6 @@ body {
     opacity: 0;
     transition: 500ms;
     color: #d6d8db;
-    font-family: 'Open Sans', sans-serif;
     margin:8px;
     font-weight: bold;
 }
@@ -340,6 +337,7 @@ body {
     position: absolute;
     right: 0;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 #menuHamburguesa.cerrado {
     left: -150px;
@@ -360,7 +358,7 @@ body {
     
 }
 .container-form {
-    background-image: url(images/dinosaurMAario.png);
+    background-image: url(/images/dinosaurMAario.png);
     border-radius: 30px;
     background-color: #00000098;
     background-repeat: no-repeat, repeat;
@@ -369,19 +367,20 @@ body {
     width: 80%;
     display: flex;
     flex-direction: column;
-    height: max-content;
+    height: 850px;
     justify-content: space-around;
     transition:  all .5s ease-out;
     align-items: end;
 }
 .welcome-back {
+    padding: 0% 8%;
     display: flex;
     align-items: center;
     text-align: center;
     align-content: center;
 }
 .message {
-    padding: 1rem;
+    padding: 1rem 20%;
 }
 .message h2 {
     font-size: 1.7rem;
@@ -409,7 +408,7 @@ body {
     height: fit-content;
     padding: 1rem;
     margin: 2rem;
-    background-color: rgba(51, 51, 51, 0.275);
+    background-color: rgba(51, 51, 51, .9);
     box-shadow: 0px 10px 10px -5px var(--Sombra);
     text-align: center;
     align-items: center;
@@ -434,13 +433,13 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    border: solid thin white;
+    border: solid thin var(--Acento);
     border-radius: 50%;
     font-size: 1.5rem;
     transition: all .3s ease-in;
 }
 .border-icon:hover {
-    background-color: #4a4aee;
+    background-color: var(--Acento);
     cursor: pointer;
 }
 .formulario input {
@@ -451,25 +450,35 @@ body {
     margin-bottom: 1rem;
     background-color: transparent;
     border: none;
-    border-bottom: white thin solid;
+    border-bottom: var(--Acento) thin solid;
     text-align: center;
     outline: none;
     padding: .2rem 0;
     font-size: .9rem;
-    color: white;
+    color: var(--Acento);
 }
 .formulario input[type="button"] {
     width: 60%;
     margin: auto;
-    border: solid thin white;
+    border: solid thin var(--Principal);
     padding: .7rem;
     border-radius: 2rem;
-    background-color: white;
+    background-color: var(--Principal);
     font-weight: 600;
     margin-top: 3rem;
     font-size: .8rem;
     cursor: pointer;
     color: #222;
+    transition: 0.7s ease;
+
+}
+.formulario input[type="button"]:hover{
+    background-color: var(--Principal-1) ;
+    border: var(--Principal2);
+    
+}
+.formulario button{
+    color: var(--Sombra);
 }
 .sign-up{
     position: absolute;
@@ -500,10 +509,8 @@ body {
 }
 #footer div {
     margin: -5px 0px 0px 0px;
-    padding:0px;
     color: #fff;
     text-align:center;
-    justify-content: space-between;
 }
 #svg {
     width:100%;
@@ -579,13 +586,13 @@ body {
     to {transform: translateX(-100%);}
 }
 #contFooter{
-    background-color: var(--Principal-2);
+    background-color: var(--Principal1);
     display: flex;
     flex-direction: row;
     width: 100%;
     height: fit-content;
     bottom:0px;
-
+    padding: 0% 10%;
     
 }
 #textFooter{
@@ -597,7 +604,6 @@ body {
 }
 #logoFooter{
     margin-right: auto;
-    width: 50%;
 }
 .idioma{
     display: flex;
@@ -625,7 +631,6 @@ body {
 #idioma li p {
     text-decoration: none;
     color: #8492a1;
-    font-family: 'Roboto', sans-serif;
     font-size: small;
 }
 #textFooter li:hover,
@@ -634,10 +639,24 @@ body {
 }
 #scrollTop{
     background-color: var(--Principal);
-    
+    border-radius: 30%;
+    height: 30%;
+    width:auto ;
 }
 #botFooter{
+    display: flex;
     background-color: var(--Principal1);
+    justify-content: flex-end;
+    width: 50%;
+    height: fit-content;
+}
+#redes{
+    display: flex;
+    flex-direction: row;
+}
+#redes img{
+    margin-top: 20px;
+    margin-left: 5px;
 }
 /* Fin Footer */
 
@@ -666,13 +685,12 @@ color:#fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin-top:5px;
     text-align: center;
-    font-family: arial;
     padding: 20px;
     border-radius:20px;
     background-color: #581A9F;
     width: 100%;
-    transition: 5ms;
-    animation:bounce-left 1.2s linear both
+    transition: 500ms;
+    /* animation:bounce-left 1.2s linear both */
   }
   .card h3 {
     color:white;
@@ -715,10 +733,7 @@ color:#fff;
   }
 /* Fin de Card */
 
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
-img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
@@ -790,7 +805,6 @@ margin:5px;
   position: absolute;
   top: 0;
 }
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -802,19 +816,14 @@ margin:5px;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
-
-
 .active, .dot:hover {
   background-color: #717171;
 }
-
 /* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -1003,6 +1012,73 @@ margin:5px;
     }
   }
 /* fin 4 en raya */
+
+
+
+/* Carrucel */
+.carouselChico{
+    position: relative;
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+.carouselChico ::-webkit-scrollbar {
+    display: none;
+}
+
+.carouselChicoContainer{
+    margin: auto;
+    padding: 10px 0;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+}
+
+.carouselChicoCardContainer{
+    width: fit-content;
+    position: relative;
+    align-items: center;
+    display: flex;
+    max-width: fit-content;
+    transition: 500ms ease;
+    gap: 10px;
+}
+.carouselChicoControls button {
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 50%;
+    cursor: pointer;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--Blanco);
+    width: 10px;
+    border: none;
+    z-index: 3;
+}
+.carouselChicoControls button{
+    width: 60px;
+}
+
+.carouselChicoControls .carouselChicoButtonRight{
+    transform: translate(70%, -50%);
+    right: 0%;
+    background-image: url(/images/arrowCarr.svg);
+}
+
+.carouselChicoControls .carouselChicoButtonLeft{
+    transform: translate(-70%, -50%);
+    left: 0%;
+    background-image: url(/images/arrowcarrizz.svg);
+}
+
+/* Fin Carrucel */
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {

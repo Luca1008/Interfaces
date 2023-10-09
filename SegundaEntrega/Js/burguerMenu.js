@@ -1,3 +1,7 @@
+const main = document.getElementById("content")
+main.style.paddingLeft = "60px"
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const toggleMenuBtn = document.getElementById("toggleMenu");
     const menuHamburguesa = document.getElementById("menuHamburguesa");
@@ -11,8 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Aplicar rotación dependiendo del estado del menú
         if (isOpen) {
             toggleMenuBtn.classList.add("rotated");
+            main.style.paddingLeft = "0px"
         } else {
             toggleMenuBtn.classList.remove("rotated");
+            main.style.paddingLeft = "60px"
         }
 
         // Alternar la clase "mostrado" en el menú
