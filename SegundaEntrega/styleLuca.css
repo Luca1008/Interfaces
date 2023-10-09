@@ -672,7 +672,8 @@ color:#fff;
     background-color: #581A9F;
     width: 100%;
     transition: 5ms;
-    animation:bounce-left 1.2s linear both
+    animation:bounce-left 1.2s linear both;
+    font-family: 'Open Sans', sans-serif;
   }
   .card h3 {
     color:white;
@@ -699,7 +700,8 @@ color:#fff;
   }
   
   .card button:hover {
-    opacity: 0.7;
+    background-color:#1e023d91;
+    color:#fff;
   }
   .imagen {
   border-radius:10%;

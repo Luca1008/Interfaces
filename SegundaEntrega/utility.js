@@ -60,6 +60,38 @@ if (n==1){
     }
     slides[n-1].style.display = "block";
     dots[n-1].className += " active";
-    
-   
+
 }
+
+
+let btnBuy = document.querySelectorAll(".btnBuy");
+
+btnBuy.forEach(element => {
+    element.addEventListener("click", function () {
+        // Obtén el índice de la tarjeta asociada al botón
+        const cardIndex = parseInt(element.closest('.card').getAttribute("data-card-index"));
+
+        // Obtén la tarjeta específica que corresponde al botón clicado
+        const card = document.querySelector(`.card[data-card-index="${cardIndex}"]`);
+
+        // Reemplaza el contenido de la tarjeta específica
+        card.innerHTML = `
+            <img class="imagen" src="/images/lol.png" alt="Valorant">
+            <h3> Valorant 5 </h3>
+            <div class="price-icon">
+                <box-icon type='solid' name='cart-download' color='#fff'></box-icon>
+                <p class="price">$19.99</p>
+            </div>
+            <p><button>Finalizar compra</button></p>
+        `;
+    });
+});
+
+
+
+
+
+
+
+
+
