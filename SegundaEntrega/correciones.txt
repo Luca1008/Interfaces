@@ -69,3 +69,24 @@ Siguiendo este orden y forma de abordar la solución van a lograr un sitio más 
         </div>
     </div> -->
     <!-- <script src="../Js/carga.js"></script> -->
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+    Hola Luca, van las correcciones del tpe2. Cualquier cosa lo vemos en clase
+- Colocaron un banner principal en el Home y está animado, aunque es medio invasivo su tamaño.
+ Mejoren las imágenes que tienen en él. (la de Pacman por ejemplo está muy pixelada)
+- Ojo con la resolución que usaron (debo ver la web en un 67% para que se comporte correctamente).
+- La animación circular 360 no queda muy bien, ppalmente en botones grandes como “Registrarse”.
+- Hay problemas de uniformidad con algunos botones (tamaño de botones “Registrarse” e “Iniciar sesión”)
+- La animación luego de registrarse es muy corta, se ve cortada. (pareciera que es de unos papelitos cayendo o similar). Revisar.
+- Muy bien usado el fondo animado de efecto líquido, no así la del fondo con los papelitos,
+ que no se entiende y parece un conjunto de manchas (ppalmente cuando se scrollea).
+- Reveer las tipografías usadas en el Fat Footer y agregar más links. (la sección con todos los idiomas no tiene mucho sentido)
+- Ver algunos íconos (ppalmente los de redes sociales en la web del juego)
+- Botones de formulario son distintos a los de “Enviar comentario” o “Agregar a favorito”).
+- Se puede mejorar el esquema de toda la info que tiene la card del videojuego. Cuando le colocan precio, la imagen del videojuego en el card se coloca más arriba. Debe pasar algo parecido cuando el nombre del juego es largo. Prueben de achicar fuentes, etc
+- Los botones de scroll de los caruseles de categorías son medio inconexos del resto del Home.
+- El Fat footer tiene más links que TPE1 pero no es fat footer. (ver casos online con el ayudante)
+- Hay algunos recursos gráficos que no se encuentran (vr imágenes en categoría Simulación).
+- Revisar las animaciones Hover y hacer las tres que se piden.
+- Arreglar la disposición en versión Mobile de HOME.
+--------------------------------------------------------------------------------------------------------------------------------------
