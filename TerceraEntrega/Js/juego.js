@@ -11,7 +11,7 @@ class Juego {
         this.ganador = null;
         //establecemos pos1 y pos2 para ubicar las fichas
         this.pos1 = this.tablero.comienzoX - 120;
-        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 30;
+        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 40;
         this.radius = 35;
         this.espera;
         this.cronometro;
@@ -32,6 +32,13 @@ class Juego {
         this.tablero.crearTablero();
     }
 
+    /**
+     * The function `generarFichas` generates and adds a new `Ficha` object to an array based on the
+     * given position and other conditions.
+     * @param ficha - The `ficha` parameter is an object representing a game piece or token. It
+     * contains properties such as position, color, image, and type.
+     * @param pos - The position of the ficha (piece) on the board.
+     */
     generarFichas(ficha, pos) {
         if (pos == this.tablero.comienzoX - 120) {
             //genera la ficha 1 y la agrega al arreglo
