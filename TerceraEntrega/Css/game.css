@@ -1,3 +1,15 @@
+:root{
+    --Principal : #430E7F;
+    --Principal1 : #340768;
+    --Principal2 : #25034B;
+    --Principal3 : #1E023D;
+    --Principal-1 : #8C55CB;
+    --Principal-2 : #6D3CA5;
+    --Principal-3 : #8C55CB;
+    --Acento : #B700FF;
+    --Sombra :  #222;
+    --Blanco : #E0E0E0;
+}
 .game_img {
     width: 100px;
     border-radius: 4px;
@@ -9,13 +21,7 @@
     height: 40px;
 }
 
-.desktop {
-    display: none;
-}
 
-.mobile {
-    display: block;
-}
 
 .encabezado_juego_seleccionado {
     display: flex;
@@ -38,19 +44,17 @@
 .contenedor_carrousel {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    background-color: #F7F4E3;
+    background-color: var(--Blanco);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 1.5rem;
 }
 
-.container {
-    display: none;
-}
+
 
 .button_play {
-    background-color: #D4832A;
+    background-color: var(--Acento);
     text-align: center;
     display: inline-flex;
     justify-content: center;
@@ -61,8 +65,8 @@
     width: 45%;
     height: 2.5rem;
     border-radius: 21rem;
-    border-bottom: solid #32335E;
-    color: white;
+    border-bottom: solid var(--Sombra);
+    color: var(--Blanco);
     font-size: 24px;
     font-weight: bold;
 }
@@ -94,7 +98,7 @@
 .similares {
     padding-left: 1rem;
     padding-right: 1rem;
-    background-color: #F7F4E3;
+    background-color: var(--Blanco);
     padding-top: 1rem;
     padding-bottom: 1rem;
 }

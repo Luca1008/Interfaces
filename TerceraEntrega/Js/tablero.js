@@ -18,8 +18,8 @@ class Tablero {
         this.image = new Image();
         this.imageArrow = new Image();
 
-        this.image.src = "assets/images/tablero_forma2.png";
-        this.imageArrow.src = "assets/images/chevron.png"
+        this.image.src = "../images/4enraya/tablero_forma2.png";
+        this.imageArrow.src = "../images/4enraya/chevron.png"
         this.matriz = this.generarMatriz();
         this.arrCol = this.generarArregloColumnas();
 

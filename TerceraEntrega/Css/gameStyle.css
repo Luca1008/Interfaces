@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Josefin+Sans:wght@100;400&family=Staatliches&display=swap');
+:root{
+    --Principal : #430E7F;
+    --Principal1 : #340768;
+    --Principal2 : #25034B;
+    --Principal3 : #1E023D;
+    --Principal-1 : #8C55CB;
+    --Principal-2 : #6D3CA5;
+    --Principal-3 : #8C55CB;
+    --Acento : #B700FF;
+    --Sombra :  #222;
+    --Blanco : #E0E0E0;
+}
 .juego {
     width: 100%;
     display: flex;
@@ -22,7 +34,7 @@ canvas {
 
 .options a {
     text-decoration: none;
-    color: black;
+    color: var(--Sombra);
     height: 3rem;
     width: 10%;
     border-radius: 1rem;
@@ -60,13 +72,13 @@ canvas {
 
 #player1 {
     border-style: solid;
-    border-color: #000000;
+    border-color: var(--Acento);
     border-radius: 3rem;
 }
 
 #player2 {
     border-style: solid;
-    border-color: #e62222;
+    border-color: var(--Acento);
     border-radius: 3rem;
 }
 

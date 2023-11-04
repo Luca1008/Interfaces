@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../Css/gameMenu.css">
     <link rel="stylesheet" href="../Css/gameStyle.css">
     <link rel="stylesheet" href="../Css/game.css">
+    <link rel="stylesheet" href="../Css/4enraya.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
@@ -57,109 +58,110 @@
         <div id="bread">
             <p><span><a href="home.html">INICIO</a></span> >> ESTRATEGIAS >> 4 EN LINEA</p>
         </div>
-
         
+
+        <div id="init_juego" class="contMenu">
+            <div class="gameMen">
+                <div class="connect">
+                    <img src="../images/4enraya/4enraya2.png" alt="">
+                </div>
+                <div class="size">
+                    <div class="title">
+                        <h2>Selecccione modo de juego</h2>
+                    </div>
+                    <label for="html">
+                          <input type="radio" class="cantidad"id="option1" name="boardSize" value="4" checked>
+                          <span>4 en línea</span>
+                        </label><br>
+                    <label for="css">
+                        <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
+                        <span>5 en línea</span>
+                        </label><br>
+                    <label for="javascript">
+                        <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
+                        <span>6 en línea</span>
+                        </label><br>
+                </div>
+                <div class="playBtn">
+                    <button id="btn_play" class=""><img class="" id="fichaBtn" src="../images/4enraya/PacmanFicha.svg"><span> Jugar</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="area ">
+            <ul class="circles ">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="area1">
+            <ul class="circles ">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="contenedor_juego" class="juego inactive">
+            <!-- ACA IRIA JUGABILIDAD-->
+            <div class="options">
+                <a href="#" id="btn_reset" class=""><img class="" id="fichaBtn" src="../images/4enraya/Reiniciar juego2.png"><span> Reiniciar</span></a>
+                <div>
+                    <h2 id="cantFichas"></h2>
+    
+                </div>
+                <a href="4enraya.html" id="btn_exit" class=""><img class="" id="fichaBtn" src="../images/4enraya/cerrar-removebg-preview.png"><span> Salir</span></a>
+            </div>
+            <div class="gameInfo">
+                <div class="turno" id="player1">
+                    <img src="../images/4enraya/PacmanFicha.svg">
+                    <h2>Turno jugador 1</h2>
+                </div>
+    
+                <div id="theWinnerIs" class="inactive">
+                    <h2 id="quienGano"></h2>
+                    <h2 id="sinTiempo"></h2>
+                </div>
+    
+                <div id="tmp">
+                    <h2>Tiempo restante</h2>
+                    <h2 id="cronometro"></h2>
+                </div>
+                <div class="turno invisible" id="player2">
+                    <img src="../images/4enraya/PickyFicha.svg">
+                    <h2>Turno jugador 2</h2>
+                </div>
+            </div>
+            <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
+            <section class="invisible" id="tablero">
+                <!-- ACA IRIA EL TABLERO DEL JUEGO-->
+                <canvas id="canvas" class="canvas" width="1200" height="800"></canvas>
+    
+            </section>
+        </div> 
         <div class="contant">
                 <figure id="juego">
                     <!-- <img class="vs" src="../images/4enraya2.png" alt="">
                     <img src="../images/4enraya1.png" alt=""> -->
-                    <div id="init_juego" class="contMenu">
-                        <div class="gameMen">
-                            <div class="connect">
-                                <img src="assets/images/connect4 title.png" alt="">
-                            </div>
-                            <div class="size">
-                                <div class="title">
-                                    <h2>Selecccione modo de juego</h2>
-                                </div>
-                                <label for="html">
-                                      <input type="radio" class="cantidad"id="option1" name="boardSize" value="4" checked>
-                                      <span>4 en línea</span>
-                                    </label><br>
-                                <label for="css">
-                                    <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
-                                    <span>5 en línea</span>
-                                    </label><br>
-                                <label for="javascript">
-                                    <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
-                                    <span>6 en línea</span>
-                                    </label><br>
-                            </div>
-                            <div class="playBtn">
-                                <button id="btn_play" class=""><img class="" id="fichaBtn" src="assets/images/ficha1_2.png"><span> Jugar</span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="area ">
-                        <ul class="circles ">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div class="area1">
-                        <ul class="circles ">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div id="contenedor_juego" class="juego inactive">
-                        <!-- ACA IRIA JUGABILIDAD-->
-                        <div class="options">
-                            <a href="#" id="btn_reset" class=""><img class="" id="fichaBtn" src="assets/images/reiniciar-removebg-preview.png"><span> Reiniciar</span></a>
-                            <div>
-                                <h2 id="cantFichas"></h2>
-                
-                            </div>
-                            <a href="jugar.html" id="btn_exit" class=""><img class="" id="fichaBtn" src="assets/images/cerrar-removebg-preview.png"><span> Salir</span></a>
-                        </div>
-                        <div class="gameInfo">
-                            <div class="turno" id="player1">
-                                <img src="assets/images/ficha1_2.png">
-                                <h2>Turno jugador 1</h2>
-                            </div>
-                
-                            <div id="theWinnerIs" class="inactive">
-                                <h2 id="quienGano"></h2>
-                                <h2 id="sinTiempo"></h2>
-                            </div>
-                
-                            <div id="tmp">
-                                <h2>Tiempo restante</h2>
-                                <h2 id="cronometro"></h2>
-                            </div>
-                            <div class="turno invisible" id="player2">
-                                <img src="assets/images/ficha2_2.png">
-                                <h2>Turno jugador 2</h2>
-                            </div>
-                        </div>
-                        <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
-                        <section class="invisible" id="tablero">
-                            <!-- ACA IRIA EL TABLERO DEL JUEGO-->
-                            <canvas id="canvas" class="canvas" width="1200" height="800"></canvas>
-                
-                        </section>
-                    </div>
+                    
 
                     <div id="menuJuego" class="div3">
                         <div id="menuIzquierda">
@@ -297,8 +299,6 @@
            
             </section>
         </div>
-
-    </div>
     </main>
     <footer id="footer">
         <svg id="svg" viewBox="0 0 120 28">
@@ -420,11 +420,11 @@
     </footer>
     <script src="../Js/galery.js"></script>
     <script src="../Js/userMenu.js"></script>
-    <script src="assets/js/cronometro.js"></script>
-    <script src="assets/js/jugar.js"></script>
-    <script src="assets/js/tablero.js"></script>
-    <script src="assets/js/ficha.js"></script>
-    <script src="assets/js/juego.js"></script>
+    <script src="../Js/cronometro.js"></script>
+    <script src="../Js/jugar.js"></script>
+    <script src="../Js/tablero.js"></script>
+    <script src="../Js/ficha.js"></script>
+    <script src="../Js/juego.js"></script>
 
 
 </body>

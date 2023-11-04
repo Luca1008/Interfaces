@@ -1,28 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Josefin+Sans:wght@100;400&family=Staatliches&display=swap');
-body {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
 
-body {
-    height: 100%;
-    background-color: red;
-    z-index: -5;
+:root{
+    --Principal : #430E7F;
+    --Principal1 : #340768;
+    --Principal2 : #25034B;
+    --Principal3 : #1E023D;
+    --Principal-1 : #8C55CB;
+    --Principal-2 : #6D3CA5;
+    --Principal-3 : #8C55CB;
+    --Acento : #B700FF;
+    --Sombra :  #222;
+    --Blanco : #E0E0E0;
 }
-
-h2 {
-    font-family: "Staatliches", cursive;
-    font-size: 2rem;
-    margin-bottom: 0;
-}
-
 .contMenu {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    z-index: -5;
-    /*  background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);*/
+    height: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-content: center;
+    align-items: center;
 }
 
 .imgCont {
@@ -55,20 +52,19 @@ h2 {
 
 .gameMen {
     position: relative;
-    top: 4.5rem;
-    background: -webkit-linear-gradient(top, #28fbb9 3%, #47abfa 100%, #47abfa 100%);
+    background: var(--Principal-2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
-    height: 70%;
+    width: 100%;
+    height: 60%;
     margin: auto;
     padding-bottom: 2rem;
 }
 
 .size {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -95,11 +91,11 @@ h2 {
 
 .playBtn button {
     text-decoration: none;
-    color: white;
+    color: var(--Blanco);
     height: 4rem;
     width: 80%;
     border-radius: 1rem;
-    background-color: #FF9700;
+    background-color: var(--Principal);
     border-style: none;
     display: flex;
 
@@ -118,7 +114,7 @@ h2 {
 }
 
 .playBtn button:hover {
-    box-shadow: #D88000 0.5rem 0.5rem 0.5rem;
+    box-shadow: var(--Principal3) 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
 }
 
@@ -169,7 +165,7 @@ label span {
     height: 90px;
     animation: animate 20s linear infinite;
     top: -150px;
-    background-image: url('../images/ficha2_2.png');
+    background-image: url('../images/4enraya/PickyFicha.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: -2;
@@ -275,7 +271,7 @@ label span {
     height: 90px;
     animation: animate 10s linear infinite;
     top: -150px;
-    background-image: url('../images/ficha1_2.png');
+    background-image: url('../images/4enraya/PacmanFicha.svg');
     background-repeat: no-repeat;
     background-size: 100%;
 }
