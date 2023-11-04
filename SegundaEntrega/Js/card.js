@@ -9,14 +9,16 @@ btnBuyList.forEach(btnBuy => {
        const imageUrl = imagen.src;
         // Cambia el contenido de la tarjeta
         card.innerHTML = `
-        <img class="imagen" src="${imageUrl}">
-        <h3>Valorant 5</h3>
-        <div class="price-icon">
-            <box-icon type='solid' name='cart-download' color='#fff'></box-icon>
-            <p class="price">$19.99</p>
+        <div class="absolute">
+        <box-icon type='solid' name='cart-download' color='#fff'></box-icon>
+        <p class="price">Agregado</p>
         </div>
-        <p><button>Finalizar compra</button></p>
-    `;
+        <img class="imagen" src="${imageUrl}">
+        <h3> Apex Legends </h3>
+        
+        <p><button class="btnBuy">Finalizar</button></p>
+        `;
     });
     
 });
+
