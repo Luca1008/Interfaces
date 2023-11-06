@@ -10,9 +10,10 @@ class Juego {
         this.limite = fichasAGanar;
         this.ganador = null;
         //establecemos pos1 y pos2 para ubicar las fichas
-        this.pos1 = this.tablero.comienzoX - 120;
-        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + 40;
-        this.radius = 35;
+        this.pos1 = this.tablero.ladoImagen / 2;
+        this.pos2 = this.tablero.comienzoX + this.tablero.ancho * this.tablero.ladoImagen + this.tablero.ladoImagen / 2;
+        this.tamanio = 480
+        this.radius = (this.tamanio / (this.limite+2)) / 2 - 5;
         this.espera;
         this.cronometro;
     }
@@ -32,28 +33,20 @@ class Juego {
         this.tablero.crearTablero();
     }
 
-    /**
-     * The function `generarFichas` generates and adds a new `Ficha` object to an array based on the
-     * given position and other conditions.
-     * @param ficha - The `ficha` parameter is an object representing a game piece or token. It
-     * contains properties such as position, color, image, and type.
-     * @param pos - The position of the ficha (piece) on the board.
-     */
-    generarFichas(ficha, pos) {
-        if (pos == this.tablero.comienzoX - 120) {
+    generarFichas(ficha, pos, jugador1, jugador2) {
+        if (pos < (this.tablero.ancho * this.tablero.ladoImagen / 2)) {
             //genera la ficha 1 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4enraya/PacmanFicha.svg', 1);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, `../images/4 en Linea/Tablero/Ficha ${jugador1} amarilla.png`, 1);
 
             this.fichas.push(ficha);
         } else {
             //genera la ficha 2 y la agrega al arreglo
-            ficha = new Ficha(pos + this.radius, (Math.random() * ((this.tablero.comienzoY + (this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, '../images/4enraya/PickyFicha.svg', 2);
+            ficha = new Ficha(pos + this.radius + 5, (Math.random() * (((this.tablero.ladoImagen * this.tablero.alto)) - this.tablero.comienzoY) + this.tablero.comienzoY), '#ff0000', ctx, this.radius, `../images/4 en Linea/Tablero/Ficha ${jugador2} roja.png`, 2);
             //la ficha es  bloqueada porque siempre arranca el jugador 1
             ficha.bloquearFicha();
             this.fichas.push(ficha);
 
         }
-
     }
 
 
@@ -188,7 +181,6 @@ class Juego {
         while (contador < this.limite && columna < this.tablero.ancho && arrHilera[columna] == fichaSelect.getJugador()) {
             columna++;
             contador++;
-
         }
 
         return contador;
@@ -273,8 +265,12 @@ class Juego {
         ganador.classList.add("active");
         //se muestra quien gano
         if (this.ganador) {
-
-            contenedor.innerHTML = `Ganador: jugador número ${fichaSelect.getJugador()}`;
+            ganador = fichaSelect.getJugador();
+            if (ganador == 1) {
+                contenedor.innerHTML = `Ganador: Player 1`;                
+            } else {
+                contenedor.innerHTML = `Ganador: Player 2`;                                
+            }
 
         } else {
 
@@ -282,7 +278,6 @@ class Juego {
         }
         //se corta el timer
         clearInterval(this.espera);
-
     }
 
 

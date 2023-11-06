@@ -21,6 +21,13 @@
     height: 40px;
 }
 
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: block;
+}
 
 
 .encabezado_juego_seleccionado {

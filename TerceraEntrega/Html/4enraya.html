@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../Css/gameMenu.css">
     <link rel="stylesheet" href="../Css/gameStyle.css">
     <link rel="stylesheet" href="../Css/game.css">
-    <link rel="stylesheet" href="../Css/4enraya.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
@@ -65,22 +64,59 @@
                 <div class="connect">
                     <img src="../images/4enraya/4enraya2.png" alt="">
                 </div>
-                <div class="size">
-                    <div class="title">
-                        <h2>Selecccione modo de juego</h2>
+                <div class="menuces">
+                    <form class="size">
+                        <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
+                        <label>
+                            <input type="radio" class="jugador1" name="jugador1" value="Homero" checked>
+                            <h3>Homero</h3>
+                        </label><br>
+                        <label>
+                            <input type="radio" class="jugador1" name="jugador1" value="Bart">
+                            <h3>Bart</h3>
+                        </label><br>
+                        <label>
+                            <input type="radio" class="jugador1" name="jugador1" value="Marge">
+                            <h3>Marge</h3>
+                        </label><br>
+                    </form>
+                    <div class="size">
+                        <div class="title">
+                            <h2>Selecccione modo de juego</h2>
+                        </div>
+                        <label for="html">
+                              <input type="radio" class="cantidad"id="option1" name="boardSize" value="4" checked>
+                              <span>4 en línea</span>
+                            </label><br>
+                        <label for="css">
+                            <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
+                            <span>5 en línea</span>
+                            </label><br>
+                        <label for="javascript">
+                            <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
+                            <span>6 en línea</span>
+                            </label><br>
                     </div>
-                    <label for="html">
-                          <input type="radio" class="cantidad"id="option1" name="boardSize" value="4" checked>
-                          <span>4 en línea</span>
+                    
+                    <form class="size">
+                        <h3 class="titulo tituloCentrado">Jugador 2: Seleccione personaje</h3>
+                        <label>
+                            <input type="radio" class="jugador2" name="jugador2" value="Homero">
+                            <h3>Homero</h3>
                         </label><br>
-                    <label for="css">
-                        <input type="radio" class="cantidad" id="option2" name="boardSize" value="5">
-                        <span>5 en línea</span>
+                        <label>
+                            <input type="radio" class="jugador2" name="jugador2" value="Bart" checked>
+                            <h3>Bart</h3>
                         </label><br>
-                    <label for="javascript">
-                        <input type="radio" class="cantidad" id="javascript" name="boardSize" value="6">
-                        <span>6 en línea</span>
+                        <label>
+                            <input type="radio" class="jugador2" name="jugador2" value="Marge">
+                            <h3>Marge</h3>
                         </label><br>
+                        <label>
+                            <input type="radio" class="jugador2" name="jugador2" value="Lisa">
+                            <h3>Lisa</h3>
+                        </label><br>
+                    </form>
                 </div>
                 <div class="playBtn">
                     <button id="btn_play" class=""><img class="" id="fichaBtn" src="../images/4enraya/PacmanFicha.svg"><span> Jugar</span></button>
@@ -153,7 +189,7 @@
             <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
             <section class="invisible" id="tablero">
                 <!-- ACA IRIA EL TABLERO DEL JUEGO-->
-                <canvas id="canvas" class="canvas" width="1200" height="800"></canvas>
+                <canvas id="canvas" class="canvas" width="1000" height="750"></canvas>
     
             </section>
         </div> 
