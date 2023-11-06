@@ -9,6 +9,8 @@ let fichaSelect;
 let arrastrar = false;
 let tablero;
 let juego;
+let jugador1;
+let jugador2;
 
 
 
@@ -63,10 +65,10 @@ function cargarJuego(jugabilidad, jugador1, jugador2) {
         }
         juego.generarFichas('ficha1', juego.getpos1());
     }
-    document.querySelector('#turno1').innerHTML = `${jugador1}`;
-    document.querySelector('#turno2').innerHTML = `${jugador2}`;
-    document.querySelector('#fichaPlayer1').src = `/images/4 en Linea/Tablero/Ficha ${jugador1} amarilla.png`
-    document.querySelector('#fichaPlayer2').src = `/images/4 en Linea/Tablero/Ficha ${jugador2} roja.png`
+    // document.querySelector('#turno1').innerHTML = `${jugador1}`;
+    // document.querySelector('#turno2').innerHTML = `${jugador2}`;
+    // document.querySelector('#fichaPlayer1').src = `../images/4enraya/${jugador1}Ficha.png`
+    // document.querySelector('#fichaPlayer2').src = `../images/4enraya/${jugador2}Ficha.png`
     //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
@@ -93,10 +95,10 @@ reset.addEventListener('click', () => {
         mje.innerHTML = '';
     });
 
-    cargarJuego(Number(jugabilidad));
+    cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
 })
 
-//}
+//
 //cuando se hace click en el mouse
 canvas.addEventListener('mousedown', (evt) => {
     //obtenemos la posicion

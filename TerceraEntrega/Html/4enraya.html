@@ -62,22 +62,22 @@
         <div id="init_juego" class="contMenu">
             <div class="gameMen">
                 <div class="connect">
-                    <img src="../images/4enraya/4enraya2.png" alt="">
+                    <h2>Pac-Man VS Blinky</h2>
                 </div>
                 <div class="menuces">
                     <form class="size">
-                        <h3 class="titulo tituloCentrado">Jugador 1: Seleccione personaje</h3>
+                        <h3 class="titulo tituloCentrado">Jugador 1:<br> Seleccione personaje</h3>
                         <label>
-                            <input type="radio" class="jugador1" name="jugador1" value="Homero" checked>
-                            <h3>Homero</h3>
+                            <input type="radio" class="jugador1" name="jugador1" value="PacMan" checked>
+                            <img src="../images/4enraya/PacmanFicha.svg" alt="">
                         </label><br>
                         <label>
-                            <input type="radio" class="jugador1" name="jugador1" value="Bart">
-                            <h3>Bart</h3>
+                            <input type="radio" class="jugador1" name="jugador1" value="MsPacMan">
+                            <img src="../images/4enraya/MsPacManFicha.png" alt="">
                         </label><br>
                         <label>
-                            <input type="radio" class="jugador1" name="jugador1" value="Marge">
-                            <h3>Marge</h3>
+                            <input type="radio" class="jugador1" name="jugador1" value="JrPacMan">
+                            <img src="../images/4enraya/JrPacManFicha.png" alt="">
                         </label><br>
                     </form>
                     <div class="size">
@@ -99,22 +99,22 @@
                     </div>
                     
                     <form class="size">
-                        <h3 class="titulo tituloCentrado">Jugador 2: Seleccione personaje</h3>
+                        <h3 class="titulo tituloCentrado">Jugador 2:<br> Seleccione personaje</h3>
                         <label>
-                            <input type="radio" class="jugador2" name="jugador2" value="Homero">
-                            <h3>Homero</h3>
+                            <input type="radio" class="jugador2" name="jugador2" value="blinky">
+                            <img src="../images/4enraya/PickyFicha.svg" alt="">
                         </label><br>
                         <label>
-                            <input type="radio" class="jugador2" name="jugador2" value="Bart" checked>
-                            <h3>Bart</h3>
+                            <input type="radio" class="jugador2" name="jugador2" value="Pinky" checked>
+                            <img src="../images/4enraya/PinkyFicha.png" alt="">
                         </label><br>
                         <label>
-                            <input type="radio" class="jugador2" name="jugador2" value="Marge">
-                            <h3>Marge</h3>
+                            <input type="radio" class="jugador2" name="jugador2" value="Inky">
+                            <img src="../images/4enraya/InkyFicha.png" alt="">
                         </label><br>
                         <label>
-                            <input type="radio" class="jugador2" name="jugador2" value="Lisa">
-                            <h3>Lisa</h3>
+                            <input type="radio" class="jugador2" name="jugador2" value="Clyde">
+                            <img src="../images/4enraya/ClydeFicha.png" alt="">
                         </label><br>
                     </form>
                 </div>
@@ -158,15 +158,11 @@
         </div>
         <div id="contenedor_juego" class="juego inactive">
             <!-- ACA IRIA JUGABILIDAD-->
-            <div class="options">
-                <a href="#" id="btn_reset" class=""><img class="" id="fichaBtn" src="../images/4enraya/Reiniciar juego2.png"><span> Reiniciar</span></a>
-                <div>
-                    <h2 id="cantFichas"></h2>
-    
-                </div>
-                <a href="4enraya.html" id="btn_exit" class=""><img class="" id="fichaBtn" src="../images/4enraya/cerrar-removebg-preview.png"><span> Salir</span></a>
-            </div>
+            
             <div class="gameInfo">
+                <div class="options">
+                    <button id="btn_reset" class=""><img class="" id="fichaBtn" src="../images/4enraya/Reiniciar juego2.png"><span> Reiniciar</span></button>
+                </div>
                 <div class="turno" id="player1">
                     <img src="../images/4enraya/PacmanFicha.svg">
                     <h2>Turno jugador 1</h2>
@@ -184,6 +180,9 @@
                 <div class="turno invisible" id="player2">
                     <img src="../images/4enraya/PickyFicha.svg">
                     <h2>Turno jugador 2</h2>
+                </div>
+                <div class="options">
+                    <button><a href="4enraya.html" id="btn_exit" class=""><img class="" id="fichaBtn" src="../images/4enraya/cerrar-removebg-preview.png"><span> Salir</span></a></button>
                 </div>
             </div>
             <!-- ACA IRIA PANTALLA PRESENTACION DEL JUEGO-->
