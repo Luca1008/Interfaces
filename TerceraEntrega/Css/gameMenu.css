@@ -48,7 +48,7 @@
     text-align: center; 
 font-family: Arial Black; 
 font-weight: bold; 
-font-size: 30px; 
+font-size: 35px; 
 color: var(--Sombra); 
 }
 
@@ -96,6 +96,9 @@ color: var(--Sombra);
     flex-direction: row;
     justify-content: space-between;
     gap: 15px;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .tituloCentrado{
