@@ -5,8 +5,6 @@ class Juego {
         this.tablero = tablero;
         this.fichas = [];
         this.contadorFichasUbicadas = 0;
-        //mostramos el tablero
-        this.mostrarTablero();
         this.limite = fichasAGanar;
         this.ganador = null;
         //establecemos pos1 y pos2 para ubicar las fichas
@@ -16,6 +14,8 @@ class Juego {
         this.radius = (this.tamanio / (this.limite+2)) / 2 - 5;
         this.espera;
         this.cronometro;
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
 

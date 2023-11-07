@@ -856,11 +856,9 @@ flex-direction: column;
 /* Footer */
 #footer {
   width:100%;
-  margin-bottom:4px;
-  
+
 }
 #footer div {
-  margin: -5px 0px 0px 0px;
   color: #fff;
   text-align:center;
 }

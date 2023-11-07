@@ -15,10 +15,7 @@ class Ficha {
         this.bloqueada = false;
         this.image = new Image();
         this.image.src = imagen;
-        //una vez que la imagen se carga se dibuja la ficha
-        this.image.onload = () => {
-            this.draw();
-        };
+        
     }
 
     getPosX() {

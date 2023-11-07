@@ -63,24 +63,26 @@ function cargarJuego(jugabilidad, jugador1, jugador2) {
             juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
             juego.generarFichas('ficha2', juego.getpos2(), jugador1, jugador2);
         }
-        juego.generarFichas('ficha1', juego.getpos1());
+        juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
     }
-    // document.querySelector('#turno1').innerHTML = `${jugador1}`;
-    // document.querySelector('#turno2').innerHTML = `${jugador2}`;
-    // document.querySelector('#fichaPlayer1').src = `../images/4enraya/${jugador1}Ficha.png`
-    // document.querySelector('#fichaPlayer2').src = `../images/4enraya/${jugador2}Ficha.png`
+    document.querySelector('#turno1').innerHTML = `${jugador1}`;
+    document.querySelector('#turno2').innerHTML = `${jugador2}`;
+    document.querySelector('#fichaPlayer1').src = `../images/4enraya/${jugador1}Ficha.png`
+    document.querySelector('#fichaPlayer2').src = `../images/4enraya/${jugador2}Ficha.png`
     //llamamos a mostrar fichas e inicializamos el timer
-    juego.mostrarFichas();
+    juego.fichas[juego.fichas.length-1].image.onload = () => {
+        juego.mostrarFichas();
+    };
+    tablero.image.onload = () => {
+        tablero.imageArrow.onload = () => {
+            tablero.draw();
+        }
+    }
     juego.timer();
 }
 
-
-let reset = document.querySelector("#btn_reset"); //reinicia el juego con la modalidad ya seleccionada
-
-reset.addEventListener('click', () => {
-
+function resetGame(){
     ctx.clearRect(0, 0, width, height); //limpiamos canvas
-    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; //mantenemos la modalidad de juego seleccionada
     let turno = document.getElementById("player1");
     let noTurno = document.getElementById("player2");
     turno.classList.remove("invisible");
@@ -91,13 +93,35 @@ reset.addEventListener('click', () => {
 
     clearInterval(juego.espera); //reiniciamos timer
     let mensajes = document.querySelectorAll("#theWinnerIs h2"); //para el caso de que se reinicie por un ganador
+    let ganador = document.querySelector("#theWinnerIs");
+    let tiempo = document.querySelector("#tmp");
+    tiempo.classList.remove("inactive");
+    ganador.classList.remove("active");
+    ganador.classList.add("inactive");
+
     mensajes.forEach(mje => {
         mje.innerHTML = '';
     });
+}
 
+let reset = document.querySelector("#btn_reset"); //reinicia el juego con la modalidad ya seleccionada
+
+reset.addEventListener('click', () => {
+    let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; //mantenemos la modalidad de juego seleccionada
+    resetGame();
     cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
 })
 
+let exit = document.querySelector("#btn_exit"); //reinicia el juego con la modalidad ya seleccionada
+
+exit.addEventListener('click', () => {
+    resetGame();
+    let contenedor_menu = document.getElementById('init_juego');
+    let contenedor_juego = document.getElementById('contenedor_juego');
+    contenedor_menu.classList.remove('inactive');
+    contenedor_juego.classList.add('inactive');
+
+})
 //
 //cuando se hace click en el mouse
 canvas.addEventListener('mousedown', (evt) => {
