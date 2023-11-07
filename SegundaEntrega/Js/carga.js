@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             progress += 1;
             loadingBar.style.width = progress + "%";
-            loadingText.innerText = "Cargando " + progress + "%";
+            loadingText.innerText =   progress + "%";
         }
     }, 50);
 });
