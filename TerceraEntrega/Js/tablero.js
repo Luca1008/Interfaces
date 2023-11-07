@@ -4,20 +4,15 @@ class Tablero {
     constructor(ctx, cantidad) {
         this.alto = 2 + cantidad;
         this.ancho = 2 + cantidad;
-        //dependiendo la cantidad de fichas con las que se juega en donde commienza X
-        if (cantidad == 4) {
-            this.comienzoX = 320;
-        } else {
-            this.comienzoX = 240
-        }
-
-        this.comienzoY = 80;
-        this.ladoImagen = 80;
-
+        this.tamanio = 480
+        this.ladoImagen = this.tamanio / this.ancho;
+        console.log(this.ladoImagen);
+        //dependiendo la cantidad de fichas con las que se juega en donde commienza X   
+        this.comienzoX = this.ladoImagen * 2;
+        this.comienzoY = this.ladoImagen;
         this.ctx = ctx;
         this.image = new Image();
         this.imageArrow = new Image();
-
         this.image.src = "../images/4enraya/tablero_forma2.png";
         this.imageArrow.src = "../images/4enraya/chevron.png"
         this.matriz = this.generarMatriz();
@@ -131,14 +126,22 @@ class Tablero {
 
     //dibujamos el tablero
     draw() {
-        let imagenTablero = this.ctx.createPattern(this.image, "repeat");
-        let arrowImage = this.ctx.createPattern(this.imageArrow, "repeat");
-
-        this.ctx.fillStyle = imagenTablero;
-        this.ctx.fillRect(this.comienzoX, this.comienzoY, (this.image.width * this.ancho), (this.image.height * this.alto));
-
-        this.ctx.fillStyle = arrowImage;
-        this.ctx.fillRect(this.comienzoX, this.comienzoY-80, (this.imageArrow.width * this.ancho), (this.imageArrow.height * 1));
+        for (let fila = 0; fila < this.alto; fila++) {
+            for (let columna = 0; columna < this.ancho; columna++) {
+              const x = this.comienzoX + columna * this.ladoImagen; // Coordenada X en el canvas
+              const y = this.comienzoY + fila * this.ladoImagen; // Coordenada Y en el canvas
+          
+              // Dibuja la imagen redimensionada en la posición (x, y)
+              this.ctx.drawImage(this.image, x, y, this.ladoImagen, this.ladoImagen);
+            }
+        }
+        for (let columna = 0; columna < this.ancho; columna++) {
+            const x = this.comienzoX + columna * this.ladoImagen; // Coordenada X en el canvas
+            const y = 0; // Coordenada Y en el canvas
+        
+            // Dibuja la imagen redimensionada en la posición (x, y)
+            this.ctx.drawImage(this.imageArrow, x, y, this.ladoImagen, this.ladoImagen);
+          }
 
 
     }

@@ -2,13 +2,15 @@
 
 let canvas = /** @type { HTMLcanvasElement} */ document.getElementById("canvas");
 let ctx = canvas.getContext('2d');
-let width = canvas.width;
-let height = canvas.height;
+let width = 0;
+let height = 0;
 let fichas = [];
 let fichaSelect;
 let arrastrar = false;
 let tablero;
 let juego;
+let jugador1;
+let jugador2;
 
 
 
@@ -26,47 +28,50 @@ document.addEventListener('DOMContentLoaded', () => {
     let btnPlay = document.getElementById('btn_play');
     let contenedor_menu = document.getElementById('init_juego');
     let contenedor_juego = document.getElementById('contenedor_juego');
-    let areas = document.querySelectorAll('.area');
     let tablero_cont = document.getElementById('tablero');
     btnPlay.addEventListener('click', () => {
         contenedor_menu.classList.add('inactive');
         contenedor_juego.classList.remove('inactive');
-        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value;
-        for (let area of areas) {
-            area.classList.add('inactive');
-        }
+        let jugabilidad = document.querySelector('input[name="boardSize"]:checked').value; 
+        this.jugador1 = document.querySelector('input[name="jugador1"]:checked').value;
+        this.jugador2 = document.querySelector('input[name="jugador2"]:checked').value;
         tablero_cont.classList.remove('invisible');
-        let cuantas = document.getElementById("cantFichas");
-        cuantas.innerHTML = "Fichas para ganar: " + jugabilidad;
-        cargarJuego(Number(jugabilidad));
+        cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
     });
-
-
 });
 
 
 
 
-function cargarJuego(jugabilidad) {
+function cargarJuego(jugabilidad, jugador1, jugador2) {
     //dibujamos el tablero y creamos la modalida dde juego
+    let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
     tablero = new Tablero(ctx, jugabilidad);
     juego = new Juego(tablero, jugabilidad);
-    let cantfichas = (((jugabilidad + 2) * (jugabilidad + 2)) / 2);
+    width = juego.pos2 + tablero.ladoImagen + 40;
+    height = (jugabilidad + 3) * tablero.ladoImagen;
+    canvas.width = width;
+    canvas.height = height;
     //generamos las fichas
-    for (let i = 0; i < cantfichas; i++) {
+    if (jugabilidad % 2 === 0) {
+        for (let i = 0; i < cantfichas; i++) {
+            juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
+            juego.generarFichas('ficha2', juego.getpos2(), jugador1, jugador2);
+        }        
+    } else {
+        for (let i = 0; i < cantfichas -1; i++) {
+            juego.generarFichas('ficha1', juego.getpos1(), jugador1, jugador2);
+            juego.generarFichas('ficha2', juego.getpos2(), jugador1, jugador2);
+        }
         juego.generarFichas('ficha1', juego.getpos1());
-        juego.generarFichas('ficha2', juego.getpos2());
-
     }
-
-
+    // document.querySelector('#turno1').innerHTML = `${jugador1}`;
+    // document.querySelector('#turno2').innerHTML = `${jugador2}`;
+    // document.querySelector('#fichaPlayer1').src = `../images/4enraya/${jugador1}Ficha.png`
+    // document.querySelector('#fichaPlayer2').src = `../images/4enraya/${jugador2}Ficha.png`
     //llamamos a mostrar fichas e inicializamos el timer
     juego.mostrarFichas();
     juego.timer();
-
-
-
-
 }
 
 
@@ -90,10 +95,10 @@ reset.addEventListener('click', () => {
         mje.innerHTML = '';
     });
 
-    cargarJuego(Number(jugabilidad));
+    cargarJuego(Number(jugabilidad), this.jugador1, this.jugador2);
 })
 
-//}
+//
 //cuando se hace click en el mouse
 canvas.addEventListener('mousedown', (evt) => {
     //obtenemos la posicion
