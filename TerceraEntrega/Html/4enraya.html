@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../Css/gameMenu.css">
     <link rel="stylesheet" href="../Css/gameStyle.css">
     <link rel="stylesheet" href="../Css/game.css">
+
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 
@@ -60,16 +61,17 @@
         
 
         <div id="init_juego" class="contMenu">
+            
             <div class="gameMen">
                 <div class="connect">
-                    <h2>Pac-Man VS Blinky</h2>
+                    <h2>PAC-MAN vs BLINKY</h2>
                 </div>
                 <div class="menuces">
                     <form class="size">
-                        <h3 class="titulo tituloCentrado">Jugador 1:<br> Seleccione personaje</h3>
+                        <h3 class="titulo tituloCentrado">JUGADOR 1:<br> Seleccione personaje</h3>
                         <label>
                             <input type="radio" class="jugador1" name="jugador1" value="PacMan" checked>
-                            <img src="../images/4enraya/PacmanFicha.svg" alt="">
+                            <img src="../images/4enraya/PacManFicha.png" alt="">
                         </label><br>
                         <label>
                             <input type="radio" class="jugador1" name="jugador1" value="MsPacMan">
@@ -79,10 +81,14 @@
                             <input type="radio" class="jugador1" name="jugador1" value="JrPacMan">
                             <img src="../images/4enraya/JrPacManFicha.png" alt="">
                         </label><br>
+                        <label>
+                            <input type="radio" class="jugador1" name="jugador1" value="SuperPacMan">
+                            <img src="../images/4enraya/SuperPacManFicha.png" alt="">
+                        </label><br>
                     </form>
                     <div class="size">
                         <div class="title">
-                            <h2>Selecccione modo de juego</h2>
+                            <h2>MODO DE JUEGO</h2>
                         </div>
                         <label for="html">
                               <input type="radio" class="cantidad"id="option1" name="boardSize" value="4" checked>
@@ -99,7 +105,7 @@
                     </div>
                     
                     <form class="size">
-                        <h3 class="titulo tituloCentrado">Jugador 2:<br> Seleccione personaje</h3>
+                        <h3 class="titulo tituloCentrado"> JUGADOR 2:<br> Seleccione personaje</h3>
                         <label>
                             <input type="radio" class="jugador2" name="jugador2" value="blinky">
                             <img src="../images/4enraya/PickyFicha.svg" alt="">
@@ -123,39 +129,6 @@
                 </div>
             </div>
         </div>
-        <div class="area ">
-            <ul class="circles ">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="area1">
-            <ul class="circles ">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
         <div id="contenedor_juego" class="juego inactive">
             <!-- ACA IRIA JUGABILIDAD-->
             
@@ -165,7 +138,7 @@
                 </div>
                 <div class="turno" id="player1">
                     <img id="fichaPlayer1" src="">
-                    <h2>Turno de</h2><h2 id="turno1"></h2>
+                    <h2>TURNO DE</h2><h2 id="turno1"></h2>
                 </div>
     
                 <div id="theWinnerIs" class="inactive">
@@ -174,12 +147,12 @@
                 </div>
     
                 <div id="tmp">
-                    <h2>Tiempo restante</h2>
+                    <h2>TIEMPO RESTANTE</h2>
                     <h2 id="cronometro"></h2>
                 </div>
                 <div class="turno invisible" id="player2">
                     <img id="fichaPlayer2" src="">
-                    <h2>Turno de</h2><h2 id="turno2"></h2>
+                    <h2>TURNO DE</h2><h2 id="turno2"></h2>
                 </div>
                 <div class="options">
                     <button id="btn_exit" class="button-49"><img class="" id="fichaBtn" src="../images/4enraya/cerrar-removebg-preview.png"><span> Salir</span></button>
@@ -189,15 +162,12 @@
             <section class="invisible" id="tablero">
                 <!-- ACA IRIA EL TABLERO DEL JUEGO-->
                 <canvas id="canvas" class="canvas" width="1000" height="750"></canvas>
+                
     
             </section>
         </div> 
         <div class="contant">
-                <figure id="juego">
-                    <!-- <img class="vs" src="../images/4enraya2.png" alt="">
-                    <img src="../images/4enraya1.png" alt=""> -->
-                    
-
+                <figure id="Varjuego">
                     <div id="menuJuego" class="div3">
                         <div id="menuIzquierda">
                             <img src="../images/icon-face.svg" alt="">
@@ -207,14 +177,14 @@
                             <img src="../images/wsp-icon.svg" alt="">
                         </div>
                         <div id="menuDerecha">
-                            <img src="../images/fullscreen3.svg" alt="">
+                            <img src="../images/fullscreen3.png" alt="">
                         </div>
                     </div>
                 </figure>
             <section id="reglasJuego">
                 
-                <button class="button-fav">Agregar a favoritos ❤️</button>
-                <h1>4 EN RAYA PAC-MAN VS SPOOKY</h1>
+                <button class="button-fav">Agregar a favoritos</button>
+                <h1>4 EN RAYA PAC-MAN VS BLINKY</h1>
                 <h2>Objetivo del Juego</h2>
                 <p>Los jugadores compiten por ser el primero en formar una línea continua de cuatro discos. La línea
                     puede
@@ -337,6 +307,11 @@
         
             </section>
         </div>
+        <div class="botFooter">
+               
+            <a id="scrollTop" href="#fondo"><img src="" alt=""><img src="../images/scrollToTopFooter.svg"
+                    alt=""></a>
+        </div>
     </main>
   
     <footer id="footer">
@@ -429,13 +404,13 @@
                     <li>Juegos con AdobeFlash</li>
                     <li>Resumen de precios</li>
                     <li>Accesibilidad</li>
-                    <li>Dispositivos compatibles</li>
+                  
                 </ul>
 
                 <ul class="navegacion">
                     <p>Navegación</p>
                     <li>Home</li>
-                    <li>Servicio</li
+                    <li>Servicio</li>
                      <li>Favoritos</li>
                     <li>Blog</li>
                     <li>Juegos gratis</li>
@@ -454,11 +429,7 @@
 
             </div>
                 
-            <div id="botFooter">
-               
-                <a id="scrollTop" href="#fondo"><img src="" alt=""><img src="../images/scrollToTopFooter.svg"
-                        alt=""></a>
-            </div>
+            
        
             </div>
             <div class="copy">

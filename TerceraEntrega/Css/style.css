@@ -387,7 +387,7 @@ h1, h2, h3, h4 {
 margin:0;
 display: flex;
 justify-content:center;
-height: 505px;
+height: 600px;
 border-radius: 5px;
 background-color: var(--Principal-2)
 }
@@ -444,20 +444,25 @@ margin-bottom: 15px;
 
 }
 .inputs {
-  margin-left:75px;
+  margin-left:45px;
   padding:20px;
-}
-
-.inputs input::placeholder { color:var(--Blanco);
  
 }
+
+.inputs input::placeholder { color:var(--Sombra);
+ background-color:rgba(255, 255, 255, 0.948);
+ border-radius: 2px;
+ padding:10px;
+}
+
 .formulario p {
   color: var(--Blanco);
+  margin-bottom: 8px;
 }
 .create-account {
   color: var(--Blanco);
   margin-top:5px;
-  margin-bottom: 0px;
+ 
   text-align: center;
   font-size: 28px;
  
@@ -553,18 +558,21 @@ border-radius: 10px;
 }
 
 .formulario input {
-  width: 60%;
+  width: 70%;
   display: block;
-  background-color: transparent;
-  border: none;
-  border-bottom: var(--Sombra) 1.4px solid;
+  background-color: white;
+  border:none;
   text-align: center;
   outline: none;
-  padding: 14px;
-  padding-bottom: 0;
+  padding: 8px;
+  margin:10px;
   font-size: 15px;
-  color: var(--Blanco);
+  border-radius: 13px;
+  color: var(--Sombra);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.638);
 }
+
+
 
 .formulario button {
   background: linear-gradient(to bottom right,var(--Principal1), var(--Principal));
@@ -625,32 +633,35 @@ border-radius: 10px;
 }
 .captcha {
   display: flex;
-  width: 42%;
-  height: 30px;
-  margin-left: 90px;
+  width: 54%;
+  height: 40px;
+  margin-left: 72px;
   align-items: center;
   border-radius: 10px;
-  background: #fafafa;
+  background: #fffffffa;
 }
 
 .captcha input {
-  width: 10%;
-  height: 25px;
-  margin: 5px;
+  width: 25%;
+  height: 22px;
+  padding:0px;
+  background-color: transparent;
+  text-decoration: none;
+  box-shadow: none;
 }
 
 .captcha p {
   color: #000;
-  font-size: 11px;
+  font-size: 14px;
   margin: 2px;
 }
 
 .captcha img {
   display: flex;
   justify-content: flex-end;
-  width: 25px;
+  width: 30px;
   height: 28px;
- margin: auto;
+ margin-right:5px;
 }
 
 .successAnimation {
@@ -949,8 +960,11 @@ flex-direction: column;
   flex-direction: row;
   padding-top:0px;
   text-decoration: none;
-  list-style:none
+  list-style:none;
+  
 }
+
+
 .info ul img {
   width:40px;
   height:50px ;
@@ -958,11 +972,13 @@ flex-direction: column;
 .info ul {
   margin:20px;
   text-decoration: none;
-  list-style:none
+  list-style:none;
+  text-align:left;
 }
 .info p {
   color:var(--Acento);
   margin-bottom:10px;
+  margin-left:10px;
  
 }
 .info ul li {
@@ -1067,7 +1083,7 @@ color:#fff;
   border-radius: 15px;
   padding: 15px 20px;
   font-size: 20px;
-  background-color:var(--Principal1);
+  background-color:var(--Principal3);
  
 }
 .button-fav {
@@ -1228,6 +1244,7 @@ to {opacity: 1}
 
 .copy {
   background-color: var(--Principal1);
+ padding: 20px;
   
 }
 .cardImage {
@@ -1338,7 +1355,7 @@ img.vs {
 #reglasJuego{
   margin-top: 5%;
   width: 100%;
-  background-color: #00000015;
+  
   padding:20px;
 }
 #bread{
@@ -1375,22 +1392,29 @@ img.vs {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  color:#fff;
+  color:var(--Blanco);
   font-family: 'Open Sans', sans-serif;
   
   
 }
+.contant figure{
+  width: 100%;
+}
+
 .contant article{
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%  ;    /* Ajusta el tamaño del contenedor a la anchura de su padre*/
   height:auto;     /*Ajusta el alto del elemento a la altura de su padre*/
-  background-color: var(--Sombra);
+  
 }
 #reglasJuego p, h2, h1, h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 19px;
   margin-top: 20px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  background-color:transparent;
 }
 
 #comentario {
@@ -1521,6 +1545,16 @@ margin:0px;
   align-items: center;
 
 }
+
+
+
+.titulo.tituloCentrado {
+color:white;
+font-size: 25px;
+font-family: 'Roboto';
+}
+
+
 .details .title p{
   margin: 0 5px;
 }
@@ -1589,6 +1623,9 @@ margin:0px;
   .gallery .image{
     width: 100%;
     padding: 4px;
+  }
+  .svg{
+    display: none;
   }
 }
 /* fin 4 en raya */
@@ -1674,6 +1711,9 @@ margin:0px;
   margin: 0 auto 2px auto;
 }
 
+.carousel h2 {
+  color:white;
+}
 .carousel a{
   cursor: default;
 }
@@ -1739,6 +1779,8 @@ margin:0px;
   z-index: 2;
 }
 
+
+
 .carouselItem2:hover .bigCardShadow{
   height: 100%;
 }
@@ -1749,6 +1791,29 @@ margin:0px;
 }
 /* Fin Carrucel */
 
+  .botFooter{
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    background-color: var(--Acento);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    position:fixed;
+    bottom: 40px;
+    right: 40px;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+
+form.size {
+  background-color:rgba(0, 0, 0, 0.837);
+  padding:10px;
+  font-family: "Staatliches", cursive;
+  box-shadow: 1px 2px 2px 5px var(--Acento);
+}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
 .prev, .next,.text {font-size: 11px}
@@ -1756,18 +1821,39 @@ margin:0px;
 
 /* Estilos para dispositivos móviles (ancho de pantalla menor o igual a 768px) */
 @media (max-width: 768px) {
+  .carouselChicoCardContainer{
+    gap: 0.000001px;
+  }
+
+  .carouselChicoCardContainer .card {
+    transform: scale(0.5); /* Achicar las tarjetas al 80% de su tamaño original */
+}
+  #svg {
+    display: none;
+}
+
+/* Hacer que el contenido del footer aparezca como una lista */
+#contFooter .info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contFooter .info ul {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#contFooter .info ul p {
+    font-weight: bold;
+}
+
+#contFooter .info ul li {
+    padding: 5px 0;
+}
+
   
-  #contFooter{
-      flex-direction: column;
-      flex-wrap: wrap;
-      padding: 0% 0%;
-      width: 100%;
-      justify-content: center;
-      align-content: center;
-  }
-  #botFooter{
-      width: 100%;
-  }
   #textFooter{
       width: 100%;
   }
@@ -1798,4 +1884,8 @@ margin:0px;
   
 
 }
+
+
+
+
 

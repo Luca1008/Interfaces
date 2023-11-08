@@ -267,9 +267,9 @@ class Juego {
         if (this.ganador) {
             ganador = fichaSelect.getJugador();
             if (ganador == 1) {
-                contenedor.innerHTML = `Ganador: Player 1`;                
+                contenedor.innerHTML = `GANADOR: Player 1`;                
             } else {
-                contenedor.innerHTML = `Ganador: Player 2`;                                
+                contenedor.innerHTML = `GANADOR: Player 2`;                                
             }
 
         } else {
@@ -304,8 +304,8 @@ class Juego {
     tiempoFinal() {
             let contGanador = document.getElementById("theWinnerIs");
             let finalizado = document.getElementById("sinTiempo");
-            //  contGanador.classList.remove('inactive');
-            //  contGanador.classList.add('active');
+             contGanador.classList.remove('inactive');
+             contGanador.classList.add('active');
             this.terminar();
             finalizado.innerHTML = "¡Se terminó el tiempo!";
 
