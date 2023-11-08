@@ -304,8 +304,8 @@ class Juego {
     tiempoFinal() {
             let contGanador = document.getElementById("theWinnerIs");
             let finalizado = document.getElementById("sinTiempo");
-             contGanador.classList.remove('inactive');
-             contGanador.classList.add('active');
+            //  contGanador.classList.remove('inactive');
+            //  contGanador.classList.add('active');
             this.terminar();
             finalizado.innerHTML = "¡Se terminó el tiempo!";
 
